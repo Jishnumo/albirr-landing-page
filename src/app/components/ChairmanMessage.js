@@ -6,14 +6,14 @@ import Link from 'next/link';
 const ChairmanMessage = () => {
   return (
     <section className="bg-white py-12 px-6 md:px-12 lg:py-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="bg-gray-50 border border-gray-100 rounded-[3rem] p-10 md:p-16 lg:p-20 shadow-sm overflow-hidden relative">
+      <div className="mx-auto max-w-6xl">
+        <div className="bg-[#fcfcfc] border border-gray-100 rounded-[3rem] p-6 md:p-10 lg:p-12 shadow-sm overflow-hidden relative">
           <div className="grid gap-16 lg:grid-cols-5 lg:items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-3 flex flex-col justify-center">
-              <div className="h-1.5 w-20 bg-red-500 mb-8 rounded-full shadow-[0_2px_10px_rgba(239,68,68,0.3)]"></div>
-              <h2 className="text-4xl font-black text-[#0f1f42] md:text-5xl lg:text-6xl mb-8 tracking-tight leading-tight">
+              <div className="h-1.5 w-12 bg-red-500 mb-8 rounded-full shadow-[0_2px_10px_rgba(239,68,68,0.3)]"></div>
+              <h2 className="text-4xl font-black text-[#0f1f42] md:text-5xl lg:text-5xl mb-8 tracking-tight leading-tight whitespace-nowrap">
                 Chairman&apos;s Message
               </h2>
               

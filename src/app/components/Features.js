@@ -1,41 +1,24 @@
 import React from 'react';
-import { Baby, Home, Laptop, Shapes } from 'lucide-react';
+import Image from 'next/image';
 
-const FeatureCard = ({ title, icon: Icon, gradient }) => (
-  <div className={`relative group p-8 rounded-[2.5rem] ${gradient} shadow-2xl transition-all hover:scale-105 hover:shadow-3xl flex flex-col items-center text-center justify-between min-h-[320px]`}>
-    <div className="flex-1 flex items-center justify-center">
-      <div className="bg-white/20 p-6 rounded-full backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform">
-        <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
-      </div>
-    </div>
-    <h3 className="text-2xl font-black text-white leading-tight mt-6">
-      {title}
-    </h3>
+const FeatureCard = ({ id, alt }) => (
+  <div className="relative group overflow-hidden rounded-[2.5rem] shadow-xl transition-all hover:scale-105 hover:shadow-2xl">
+    <Image
+      src={`/row${id}.png`}
+      alt={alt}
+      width={400}
+      height={400}
+      className="w-full h-auto object-contain"
+    />
   </div>
 );
 
 const Features = () => {
   const features = [
-    {
-      title: "Child Friendly Schooling",
-      icon: Baby,
-      gradient: "bg-gradient-to-br from-[#4facfe] to-[#00f2fe]"
-    },
-    {
-      title: "Nurturing Environment",
-      icon: Home,
-      gradient: "bg-gradient-to-br from-[#f093fb] to-[#f5576c]"
-    },
-    {
-      title: "IT Enabled Learning",
-      icon: Laptop,
-      gradient: "bg-gradient-to-br from-[#89f7fe] to-[#66a6ff]"
-    },
-    {
-      title: "Activity Based Learning",
-      icon: Shapes,
-      gradient: "bg-gradient-to-br from-[#ff9a9e] to-[#fecfef]"
-    }
+    { id: 1, alt: "Child Friendly Schooling" },
+    { id: 2, alt: "Nurturing Environment" },
+    { id: 3, alt: "IT Enabled Learning" },
+    { id: 4, alt: "Activity Based Learning" }
   ];
 
   return (
@@ -53,8 +36,8 @@ const Features = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, idx) => (
-            <FeatureCard key={idx} {...feature} />
+          {features.map((feature) => (
+            <FeatureCard key={feature.id} {...feature} />
           ))}
         </div>
       </div>

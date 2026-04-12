@@ -6,6 +6,8 @@ import Features from "./components/Features";
 import ChairmanMessage from "./components/ChairmanMessage";
 import CardsSection from "./components/CardsSection";
 import ContactForm from "./components/ContactForm";
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -23,14 +25,13 @@ export default function Home() {
         <AdmissionsSection />
         <CardsSection />
         <ContactForm />
-      </main>
-
-      {/* Footer Placeholder (Optional but good for premium feel) */}
-      <footer className="bg-deep-navy border-t border-white/5 py-12 px-6 md:px-12 text-center text-white/50 text-sm">
-        <div className="mx-auto max-w-7xl">
-          <p>© 2024 ALBİRR Schools. All Rights Reserved.</p>
+        
+        {/* Final Sections blended into dark blue */}
+        <div className="bg-[#0f1f42]">
+          <Gallery />
+          <Footer />
         </div>
-      </footer>
+      </main>
     </div>
   );
 }
