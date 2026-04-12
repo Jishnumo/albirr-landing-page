@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121F3E;
+  --foreground: #ffffff;
+  --school-blue-light: #1a46a6;
+  --school-blue-dark: #0c1b48;
+  --deep-navy: #121F3E;
+  --accent-pink: #9C4A9C;
+  --accent-orange: #F05B28;
+  --figma-cyan: #36E1FF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-school-blue-light: var(--school-blue-light);
+  --color-school-blue-dark: var(--school-blue-dark);
+  --color-deep-navy: var(--deep-navy);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-orange: var(--accent-orange);
+  --color-figma-cyan: var(--figma-cyan);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--deep-navy);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hero-gradient {
+  background: linear-gradient(to right, var(--school-blue-light) 0%, var(--school-blue-dark) 100%);
+}
+
+/* Organic Blob Shapes - Refined for Twin Match */
+.organic-blob {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+  mix-blend-mode: normal;
+  border-radius: 50%;
 }
