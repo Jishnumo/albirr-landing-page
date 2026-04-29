@@ -1,16 +1,26 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const AboutSection = () => {
+  const sectionRef = useScrollReveal();
+  const leftRef   = useScrollReveal({ threshold: 0.1 });
+  const rightRef  = useScrollReveal({ threshold: 0.1 });
+
   return (
-    <section className="bg-transparent px-6 py-12 md:px-12 md:py-16">
+    <section ref={sectionRef} className="bg-transparent px-6 py-12 md:px-12 md:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="border border-[#36E1FF]/30 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 bg-white/5 backdrop-blur-sm">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             {/* Left Content */}
-            <div className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
+            <div
+              ref={leftRef}
+              data-reveal="fade-left"
+              className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start"
+            >
               <div className="h-1.5 w-12 md:w-16 bg-[#F05B28] mb-6 rounded-full"></div>
               <h2 className="text-3xl font-black text-white md:text-5xl">
                 About ALBİRR
@@ -38,7 +48,12 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="relative mt-8 lg:mt-0">
+            <div
+              ref={rightRef}
+              data-reveal="fade-right"
+              data-reveal-delay="200"
+              className="relative mt-8 lg:mt-0"
+            >
               <div className="relative h-[280px] sm:h-[350px] md:h-[400px] w-full overflow-hidden rounded-[1.5rem] md:rounded-[2rem] bg-white/5 border border-white/10 shadow-2xl">
                 <Image
                   src="/second_image.png"

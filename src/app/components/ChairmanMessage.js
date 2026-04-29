@@ -1,17 +1,27 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ChairmanMessage = () => {
+  const sectionRef = useScrollReveal({ threshold: 0.08 });
+  const leftRef    = useScrollReveal({ threshold: 0.08 });
+  const rightRef   = useScrollReveal({ threshold: 0.08 });
+
   return (
-    <section className="bg-white py-12 px-6 md:px-12 lg:py-16">
+    <section ref={sectionRef} className="bg-white py-12 px-6 md:px-12 lg:py-16">
       <div className="mx-auto max-w-6xl">
         <div className="bg-[#fcfcfc] border border-gray-100 rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 shadow-sm overflow-hidden relative">
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-5 lg:items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-3 flex flex-col justify-center items-center lg:items-start">
+            <div
+              ref={leftRef}
+              data-reveal="fade-left"
+              className="lg:col-span-3 flex flex-col justify-center items-center lg:items-start"
+            >
               <div className="h-1.5 w-12 bg-red-500 mb-8 rounded-full shadow-[0_2px_10px_rgba(239,68,68,0.3)]"></div>
               <h2 className="text-3xl font-black text-[#0f1f42] md:text-5xl lg:text-5xl mb-8 tracking-tight leading-tight whitespace-normal md:whitespace-nowrap text-center lg:text-left">
                 Chairman&apos;s Message
@@ -41,7 +51,12 @@ const ChairmanMessage = () => {
             </div>
 
             {/* Right Profile */}
-            <div className="lg:col-span-2 flex flex-col items-center justify-center">
+            <div
+              ref={rightRef}
+              data-reveal="zoom"
+              data-reveal-delay="200"
+              className="lg:col-span-2 flex flex-col items-center justify-center"
+            >
               <div className="relative group p-2 rounded-full bg-gradient-to-tr from-[#9C4A9C] via-[#36E1FF] to-[#F05B28] shadow-2xl transition hover:scale-105 duration-500">
                 <div className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-full border-4 border-white">
                   <Image

@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Gallery = () => {
   const images = [
@@ -11,6 +13,9 @@ const Gallery = () => {
     { src: '/g6.webp', year: '2020', alt: 'Outdoor Learning' },
   ];
 
+  const headerRef = useScrollReveal({ threshold: 0.1 });
+  const gridRef   = useScrollReveal({ threshold: 0.06 });
+
   return (
     <section className="bg-[#0f1f42] py-24 px-6 md:px-12 relative overflow-hidden">
       <div className="mx-auto max-w-7xl">
@@ -19,13 +24,17 @@ const Gallery = () => {
         <div className="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] md:rounded-[4rem] p-6 md:p-12 lg:p-16 shadow-[0_30px_100px_rgba(0,0,0,0.3)]">
           
           {/* Tab Header */}
-          <div className="flex justify-center mb-12 px-2">
+          <div
+            ref={headerRef}
+            data-reveal="fade-up"
+            className="flex justify-center mb-12 px-2"
+          >
             <div className="inline-flex bg-[#1c243c]/80 backdrop-blur-md p-1.5 rounded-full border border-white/10 shadow-inner overflow-x-auto no-scrollbar max-w-full">
               <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full bg-[#9C4A9C]/80 text-white font-bold text-xs md:text-sm tracking-wide shadow-lg transition-all">
                 Gallery
               </button>
               <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full text-white/70 font-bold text-xs md:text-sm tracking-wide hover:text-white transition-all">
-                News & Media
+                News &amp; Media
               </button>
               <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full text-white/70 font-bold text-xs md:text-sm tracking-wide hover:text-white transition-all">
                 Downloads
@@ -34,7 +43,12 @@ const Gallery = () => {
           </div>
 
           {/* Image Grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            ref={gridRef}
+            data-reveal="fade-up"
+            data-reveal-delay="150"
+            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
             {images.map((img, idx) => (
               <div 
                 key={idx} 
@@ -60,7 +74,7 @@ const Gallery = () => {
 
         </div>
 
-        {/* Decorative background blur (optional but premium) */}
+        {/* Decorative background blur */}
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#9C4A9C]/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#36E1FF]/10 rounded-full blur-[120px] pointer-events-none"></div>
       </div>

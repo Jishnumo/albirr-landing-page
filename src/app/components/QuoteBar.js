@@ -1,13 +1,20 @@
-
+"use client";
 import React from 'react';
 import Image from 'next/image';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const QuoteBar = () => {
+  const ref = useScrollReveal({ threshold: 0.2 });
+
   return (
     <section className="relative px-6 py-4 md:px-12 md:py-0 bg-transparent -mt-12 md:-mt-20 lg:-mt-24 z-20">
       <div className="mx-auto max-w-7xl relative flex justify-center">
         {/* Slender, long rectangle container */}
-        <div className="relative w-full max-w-[1100px] min-h-[60px] md:min-h-[85px] lg:min-h-[90px] flex items-center justify-center px-8 py-4">
+        <div
+          ref={ref}
+          data-reveal="zoom"
+          className="relative w-full max-w-[1100px] min-h-[60px] md:min-h-[85px] lg:min-h-[90px] flex items-center justify-center px-8 py-4"
+        >
           <Image
             src="/Rectangle.png"
             alt="Quote Background"
