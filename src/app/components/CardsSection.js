@@ -1,48 +1,90 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
 const cardsData = [
   {
     id: 1,
     image: "/card1.webp",
     title: "IT Enabled Smart Classrooms",
-    description: "Step into the future of education with our state of the art smart classrooms, equipped with interactive technology that enhances learning experiences and fosters digital literacy.",
-    theme: "light",
+    description:
+      "Step into the future of education with our state of the art smart classrooms, equipped with interactive technology that enhances learning experiences and fosters digital literacy.",
+    theme: "dark",
   },
   {
     id: 2,
     image: "/card2.webp",
     title: "Secured And Well Structured Building",
-    description: "Your child's safety is our top priority. Our meticulously designed and secure building ensures a protective environment, providing peace of mind for parents and a conducive space for learning and growth.",
-    theme: "dark",
+    description:
+      "Your child's safety is our top priority. Our meticulously designed and secure building ensures a protective environment, providing peace of mind for parents and a conducive space for learning and growth.",
+    theme: "light",
   },
   {
     id: 3,
     image: "/card3.webp",
     title: "Children's Park",
-    description: "Delight in outdoor adventures, socializing, and joyful play in our vibrant park designed for all.",
+    description:
+      "Delight in outdoor adventures, socializing, and joyful play in our vibrant park designed for all.",
+    theme: "dark",
+  },
+  {
+    id: 4,
+    image: "/card1.webp",
+    title: "Interactive Laboratories",
+    description:
+      "Our state-of-the-art labs provide hands-on experience, fostering a deep understanding of scientific concepts and innovation.",
     theme: "light",
-  }
+  },
+  {
+    id: 5,
+    image: "/card2.webp",
+    title: "Expansive Library",
+    description:
+      "A vast collection of resources spanning various disciplines to support research, imagination, and continuous learning.",
+    theme: "dark",
+  },
+  {
+    id: 6,
+    image: "/card3.webp",
+    title: "Sports Complex",
+    description:
+      "Premium facilities for various sports, encouraging physical fitness, teamwork, and overall well-being among students.",
+    theme: "light",
+  },
 ];
 
 const CardContent = ({ card }) => {
-  const isDark = card.theme === 'dark';
+  const isDark = card.theme === "dark";
   return (
-    <div className={`flex flex-col h-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden ${isDark ? 'bg-[#1c243c] shadow-[0_20px_60px_rgba(0,0,0,0.15)] relative z-10' : 'bg-[#fcfcfc] shadow-[0_15px_50px_rgba(0,0,0,0.08)] border border-gray-100'}`}>
-      <div className={`relative w-full aspect-[1.1] ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>
-        <Image src={card.image} alt={card.title} fill className="object-cover" />
+    <div
+      className={`flex flex-col h-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden ${isDark ? "bg-[#26335D]" : "bg-white border border-[#26335D]"}`}
+    >
+      <div
+        className={`relative w-full aspect-[1.1] ${isDark ? "bg-[#26335D]" : "bg-gray-100"}`}
+      >
+        <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          className="object-cover"
+        />
       </div>
       <div className="p-6 md:p-8 flex flex-col flex-grow">
-        <h3 className={`text-base md:text-xl font-bold mb-4 ${isDark ? 'text-white' : 'text-[#0f1f42]'}`}>{card.title}</h3>
-        <p className={`text-[10px] md:text-sm leading-relaxed font-medium ${isDark ? 'text-gray-300' : 'text-gray-400'}`}>
+        <h3
+          className={`text-base md:text-xl font-bold mb-4 ${isDark ? "text-white" : "text-[#0f1f42]"}`}
+        >
+          {card.title}
+        </h3>
+        <p
+          className={`text-[10px] md:text-sm leading-relaxed font-medium ${isDark ? "text-gray-300" : "text-gray-400"}`}
+        >
           {card.description}
         </p>
       </div>
@@ -62,7 +104,7 @@ const CardsSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (sectionRef.current) {
@@ -73,33 +115,54 @@ const CardsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 px-6 md:px-12 overflow-hidden">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-12 md:mb-20 gap-4 text-center md:text-left items-center md:items-baseline">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#0f1f42] tracking-tight">
+    <section
+      ref={sectionRef}
+      className="bg-white py-24 px-6 md:px-12 overflow-hidden lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
+    >
+      <div className="mx-auto max-w-7xl w-full">
+        <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-12 md:mb-16 gap-4 text-center md:text-left items-center">
+          <h2 className="text-3xl md:text-[45px] font-bold text-[#26335D] tracking-tight">
             Our Facilities
           </h2>
-          <div className="text-gray-300 font-medium text-xs md:text-base tracking-wide italic">
+          <div className="text-[#A0A4AB] font-medium text-xs md:text-sm tracking-wide italic">
             / Where Learning and Comfort Meet
           </div>
         </div>
 
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          .swiper-pagination-bullet {
+            background-color: #e2e8f0;
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+            margin: 0 6px !important;
+          }
+          .swiper-pagination-bullet-active {
+            background-color: #94a3b8;
+          }
+          .swiper-slide {
+            height: auto !important;
+          }
+          .swiper-pagination {
+            position: relative !important;
+            margin-top: 2.5rem !important;
+            bottom: 0px !important;
+          }
+        `,
+          }}
+        />
+
         {/* Mobile Swiper (Coverflow) */}
-        <div className={`block md:hidden transform transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`}>
-          <style dangerouslySetInnerHTML={{__html: `
-            .swiper-pagination-bullet {
-              background-color: #cbd5e1;
-              opacity: 1;
-            }
-            .swiper-pagination-bullet-active {
-              background-color: #94a3b8;
-            }
-          `}} />
+        <div
+          className={`block md:hidden transform transition-all duration-1000 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"}`}
+        >
           <Swiper
-            effect={'coverflow'}
+            effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={'auto'}
+            slidesPerView={"auto"}
             coverflowEffect={{
               rotate: 30,
               stretch: 0,
@@ -108,30 +171,44 @@ const CardsSection = () => {
               slideShadows: false,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
-            className="w-full pb-16 pt-4"
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            className="pb-12 pt-8 px-5 -mx-5"
           >
             {cardsData.map((card) => (
               <SwiperSlide key={card.id} className="w-[85%] max-w-[350px]">
-                <CardContent card={card} />
+                <div className="h-full p-2">
+                  <CardContent card={card} />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid gap-8 grid-cols-3 max-w-6xl mx-auto">
-          {cardsData.map((card, index) => (
-            <div 
-              key={card.id}
-              className={`transform transition-all duration-1000 ease-out hover:-translate-y-2 ${
-                isVisible ? 'translate-y-0 translate-x-0 opacity-100 rotate-0' : 'translate-y-24 -translate-x-12 opacity-0 rotate-[-8deg]'
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <CardContent card={card} />
-            </div>
-          ))}
+        {/* Desktop Slider */}
+        <div
+          className={`hidden md:block w-full max-w-7xl mx-auto transform transition-all duration-1000 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"
+          }`}
+        >
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={40}
+            loop={true}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            modules={[Pagination, Autoplay]}
+            className="pb-12 pt-8 px-8 -mx-8"
+          >
+            {cardsData.map((card) => (
+              <SwiperSlide key={card.id}>
+                <div className="h-full">
+                  <CardContent card={card} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
