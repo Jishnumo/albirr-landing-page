@@ -67,7 +67,7 @@ const CardContent = ({ card }) => {
       className={`flex flex-col h-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden ${isDark ? "bg-[#26335D]" : "bg-white border border-[#26335D]"}`}
     >
       <div
-        className={`relative w-full aspect-[1.1] ${isDark ? "bg-[#26335D]" : "bg-gray-100"}`}
+        className={`relative w-full aspect-[1.4] md:aspect-[1.6] ${isDark ? "bg-[#26335D]" : "bg-gray-100"}`}
       >
         <Image
           src={card.image}
@@ -117,10 +117,10 @@ const CardsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-24 px-6 md:px-12 overflow-hidden lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
+      className="bg-white py-12 md:py-16 px-6 md:px-12 overflow-hidden lg:h-[105vh] lg:min-h-0 lg:flex lg:flex-col lg:justify-center"
     >
       <div className="mx-auto max-w-7xl w-full">
-        <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-12 md:mb-16 gap-4 text-center md:text-left items-center">
+        <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 md:mb-12 gap-4 text-center md:text-left items-center">
           <h2 className="text-3xl md:text-[45px] font-bold text-[#26335D] tracking-tight">
             Our Facilities
           </h2>

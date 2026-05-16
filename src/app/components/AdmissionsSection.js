@@ -13,7 +13,7 @@ const AdmissionsSection = () => {
   });
 
   return (
-    <section className="bg-[#243054] px-6 py-16 md:px-12 md:py-24 max-h-[90vh] relative overflow-hidden flex items-center">
+    <section className="bg-[#243054] px-6 py-16 md:px-12 md:py-24 max-h-aut relative overflow-hidden flex items-center">
       <div className="mx-auto max-w-7xl relative z-10 w-full">
         <div className="flex flex-col lg:flex-row gap-12 lg:items-center w-full">
           {/* Left: Image (50%) */}
