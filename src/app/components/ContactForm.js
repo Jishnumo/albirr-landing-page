@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const ContactForm = () => {
   return (
-    <section className="relative min-h-[700px] flex items-center py-20 px-6 md:px-12 overflow-hidden bg-[#0A1329]">
+    <section id="contact" className="relative min-h-[700px] flex items-center py-20 px-6 md:px-12 overflow-hidden bg-[#0A1329]">
       {/* Background Image - No Overlay as requested */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <Image

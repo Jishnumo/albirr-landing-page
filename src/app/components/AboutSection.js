@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const AboutSection = () => {
   return (
-    <section className="bg-transparent px-6 py-12 md:px-12 md:py-16">
+    <section id="about" className="bg-transparent px-6 py-12 md:px-12 md:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="border border-[#36E1FF]/30 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 bg-white/5 backdrop-blur-sm">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">

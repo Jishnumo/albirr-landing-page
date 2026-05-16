@@ -44,7 +44,7 @@ const Hero = () => {
         {/* Desktop Menu Items */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-8">
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Home</Link>
-          <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">About</Link>
+          <Link href="#about" className="text-sm font-medium text-white/85 hover:text-white transition">About</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Academics</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Administration</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Media</Link>
@@ -52,7 +52,7 @@ const Hero = () => {
 
         {/* Desktop Right CTA */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-6">
-          <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">
+          <Link href="#contact" className="text-sm font-medium text-white/85 hover:text-white transition">
             Contact
           </Link>
           <Link
@@ -85,12 +85,12 @@ const Hero = () => {
           
           <div className="flex flex-col items-center gap-8 text-center px-6 w-full max-w-sm">
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Home</Link>
-            <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">About</Link>
+            <Link href="#about" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">About</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Academics</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Administration</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Media</Link>
             <div className="h-px w-24 bg-white/20 my-4" />
-            <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-xl font-normal text-white/80 hover:text-white transition">Contact</Link>
+            <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-normal text-white/80 hover:text-white transition">Contact</Link>
             <Link
               href="#"
               onClick={() => setIsMenuOpen(false)}
