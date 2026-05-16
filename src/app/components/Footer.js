@@ -32,15 +32,15 @@ const Footer = () => {
                 className="brightness-200 contrast-200"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-xs md:text-sm leading-relaxed max-w-xs">
               Empowering the next generation with balanced education and strong Islamic values.
             </p>
           </div>
 
           {/* Quick Links Column */}
           <div className="lg:col-span-2 text-center lg:text-left">
-            <h4 className="text-lg font-bold mb-6 md:mb-8 tracking-tight text-white">Quick Links</h4>
-            <ul className="space-y-4 text-gray-400 text-sm font-medium">
+            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-8 tracking-tight text-white">Quick Links</h4>
+            <ul className="space-y-3 md:space-y-4 text-gray-400 text-xs md:text-sm font-medium">
               <li><Link href="#" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">About</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Admission</Link></li>
@@ -53,8 +53,8 @@ const Footer = () => {
 
           {/* Useful Links Column */}
           <div className="lg:col-span-2 text-center lg:text-left">
-            <h4 className="text-lg font-bold mb-6 md:mb-8 tracking-tight text-white">Useful Links</h4>
-            <ul className="space-y-4 text-gray-400 text-sm font-medium">
+            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-8 tracking-tight text-white">Useful Links</h4>
+            <ul className="space-y-3 md:space-y-4 text-gray-400 text-xs md:text-sm font-medium">
               <li><Link href="#" className="hover:text-white transition-colors">Curriculum</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Academics</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Infrastructure</Link></li>
@@ -66,34 +66,34 @@ const Footer = () => {
 
           {/* Get In Touch Column */}
           <div className="lg:col-span-3 text-center lg:text-left">
-            <h4 className="text-lg font-bold mb-6 md:mb-8 tracking-tight text-white">Get In Touch</h4>
-            <ul className="space-y-5 flex flex-col items-center lg:items-start">
-              <li className="flex items-center gap-4 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20">
-                  <Phone className="h-4 w-4" />
+            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-8 tracking-tight text-white">Get In Touch</h4>
+            <ul className="space-y-4 md:space-y-5 flex flex-col items-center lg:items-start">
+              <li className="flex items-center gap-3 md:gap-4 group">
+                <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20">
+                  <Phone className="h-3 w-3 md:h-4 md:w-4" />
                 </div>
-                <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">+91 9061 559 827</span>
+                <span className="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white transition-colors">+91 9061 559 827</span>
               </li>
-              <li className="flex items-start gap-4 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20 mt-1">
-                  <MapPin className="h-4 w-4" />
+              <li className="flex items-start gap-3 md:gap-4 group">
+                <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20 mt-1">
+                  <MapPin className="h-3 w-3 md:h-4 md:w-4" />
                 </div>
-                <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors max-w-[200px]">
+                <span className="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white transition-colors max-w-[200px]">
                   4517 Washington Ave. Manchester, Kentucky 39495
                 </span>
               </li>
-              <li className="flex items-center gap-4 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20">
-                  <Mail className="h-4 w-4" />
+              <li className="flex items-center gap-3 md:gap-4 group">
+                <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20">
+                  <Mail className="h-3 w-3 md:h-4 md:w-4" />
                 </div>
-                <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">schoolalbirr@gmail.com</span>
+                <span className="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white transition-colors">schoolalbirr@gmail.com</span>
               </li>
             </ul>
           </div>
 
           {/* Follow Us Column */}
           <div className="lg:col-span-2 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <h4 className="text-lg font-bold mb-6 md:mb-8 tracking-tight text-white">Follow Us</h4>
+            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-8 tracking-tight text-white">Follow Us</h4>
             <div className="flex gap-4 justify-center lg:justify-start">
               <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#3b5998] transition-all">
                 <svg className="h-5 w-5 fill-white" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>

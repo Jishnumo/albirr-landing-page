@@ -20,14 +20,14 @@ const Gallery = () => {
           
           {/* Tab Header */}
           <div className="flex justify-center mb-12 px-2">
-            <div className="inline-flex bg-[#1c243c]/80 backdrop-blur-md p-1.5 rounded-full border border-white/10 shadow-inner overflow-x-auto no-scrollbar max-w-full">
-              <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full bg-[#9C4A9C]/80 text-white font-bold text-xs md:text-sm tracking-wide shadow-lg transition-all">
+            <div className="inline-flex bg-[#1c243c]/80 backdrop-blur-md p-1 rounded-full border border-white/10 shadow-inner overflow-x-auto no-scrollbar max-w-full">
+              <button className="whitespace-nowrap px-3 sm:px-4 md:px-8 py-2 md:py-2.5 rounded-full bg-[#9C4A9C]/80 text-white font-bold text-[10px] sm:text-xs md:text-sm tracking-wide shadow-lg transition-all">
                 Gallery
               </button>
-              <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full text-white/70 font-bold text-xs md:text-sm tracking-wide hover:text-white transition-all">
+              <button className="whitespace-nowrap px-3 sm:px-4 md:px-8 py-2 md:py-2.5 rounded-full text-white/70 font-bold text-[10px] sm:text-xs md:text-sm tracking-wide hover:text-white transition-all">
                 News & Media
               </button>
-              <button className="whitespace-nowrap px-4 md:px-8 py-2.5 rounded-full text-white/70 font-bold text-xs md:text-sm tracking-wide hover:text-white transition-all">
+              <button className="whitespace-nowrap px-3 sm:px-4 md:px-8 py-2 md:py-2.5 rounded-full text-white/70 font-bold text-[10px] sm:text-xs md:text-sm tracking-wide hover:text-white transition-all">
                 Downloads
               </button>
             </div>

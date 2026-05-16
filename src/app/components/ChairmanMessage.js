@@ -17,7 +17,7 @@ const ChairmanMessage = () => {
                 Chairman&apos;s Message
               </h2>
               
-              <div className="space-y-6 text-gray-700 text-lg md:text-xl leading-relaxed font-medium">
+              <div className="space-y-4 md:space-y-6 text-gray-700 text-sm md:text-base leading-relaxed font-medium text-justify">
                 <p>
                   At Albirr we provide a totally balanced environment focused not only on academic progress of the child but also their physical, social and emotional development. All our centres boasts of state of the art infrastructure with libraries, laboratories for computer and science, play area and well equipped classrooms. 
                 </p>

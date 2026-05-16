@@ -10,13 +10,13 @@ const AboutSection = () => {
         <div className="border border-[#36E1FF]/30 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 bg-white/5 backdrop-blur-sm">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             {/* Left Content */}
-            <div className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
+            <div className="flex flex-col justify-center text-left items-start">
               <div className="h-1.5 w-12 md:w-16 bg-[#F05B28] mb-6 rounded-full"></div>
-              <h2 className="text-3xl font-black text-white md:text-5xl">
+              <h2 className="text-2xl font-bold md:font-black text-white md:text-5xl">
                 About ALBİRR
               </h2>
               
-              <div className="mt-8 space-y-5 text-base text-white/75 md:text-lg">
+              <div className="mt-6 space-y-4 text-sm text-white/75 md:text-lg md:space-y-5 text-justify">
                 <p className="leading-relaxed">
                   Albirr Schools is proudly delivering quality education in more than 350+ branches not only in India but across the world. We have branches in Kerala, Karnataka, Oman and Saudi Arabia with pre-primary and primary sections. Albirr Islamic Pre School was established with the main vision to mould and transform lives according to Islamic values enhanced through child friendly academic programs.
                 </p>
@@ -25,7 +25,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="mt-10 flex justify-center lg:justify-start">
+              <div className="mt-8 flex justify-start">
                 <Link
                   href="#"
                   className="group inline-flex items-center gap-3 text-white font-semibold transition-all hover:gap-5"
