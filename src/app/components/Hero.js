@@ -29,7 +29,7 @@ const Hero = () => {
       {/* Navbar - Pulled tightly to top */}
       <div className="relative z-[100] mx-auto max-w-7xl flex items-center justify-between pt-4 pb-6 md:pt-4 md:pb-8 lg:pt-6 lg:pb-10">
         {/* Logo */}
-        <Link href="#" className="flex-shrink-0 relative z-[101]">
+        <Link href="/" className="flex-shrink-0 relative z-[101]">
           <div className="relative h-20 w-56 sm:h-24 sm:w-64 md:h-28 md:w-72 lg:h-32 lg:w-80 rounded-lg flex-shrink-0">
             <Image
               src="/newlogo 1.png"
@@ -43,8 +43,8 @@ const Hero = () => {
 
         {/* Desktop Menu Items */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-8">
-          <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Home</Link>
-          <Link href="#about" className="text-sm font-medium text-white/85 hover:text-white transition">About</Link>
+          <Link href="/" className="text-sm font-medium text-white/85 hover:text-white transition">Home</Link>
+          <Link href="/pages/about" className="text-sm font-medium text-white/85 hover:text-white transition">About</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Academics</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Administration</Link>
           <Link href="#" className="text-sm font-medium text-white/85 hover:text-white transition">Media</Link>
@@ -52,7 +52,7 @@ const Hero = () => {
 
         {/* Desktop Right CTA */}
         <div className="hidden xl:flex items-center gap-4 xl:gap-6">
-          <Link href="#contact" className="text-sm font-medium text-white/85 hover:text-white transition">
+          <Link href="/#contact" className="text-sm font-medium text-white/85 hover:text-white transition">
             Contact
           </Link>
           <Link
@@ -84,13 +84,13 @@ const Hero = () => {
           </button>
           
           <div className="flex flex-col items-center gap-8 text-center px-6 w-full max-w-sm">
-            <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Home</Link>
-            <Link href="#about" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">About</Link>
+            <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Home</Link>
+            <Link href="/pages/about" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">About</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Academics</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Administration</Link>
             <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Media</Link>
             <div className="h-px w-24 bg-white/20 my-4" />
-            <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-normal text-white/80 hover:text-white transition">Contact</Link>
+            <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-normal text-white/80 hover:text-white transition">Contact</Link>
             <Link
               href="#"
               onClick={() => setIsMenuOpen(false)}

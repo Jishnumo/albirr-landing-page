@@ -4,13 +4,13 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ className = "bg-[#0f1f42]" }) => {
   return (
-    <footer className="bg-[#0f1f42] text-white pt-24 relative overflow-hidden">
+    <footer className={`${className} text-white pt-24 relative overflow-hidden`}>
       {/* Background Shape Overlay */}
-      <div className="absolute inset-x-0 top-0 h-full w-full z-0 opacity-40">
+      <div className="absolute inset-x-0 top-0 h-full w-full z-0 opacity-100">
         <Image
-          src="/footer shape 5.png"
+          src="/hero shape 7.png"
           alt="Footer background shape"
           fill
           className="object-cover"
@@ -43,12 +43,12 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 md:space-y-4 text-gray-400 text-xs md:text-sm font-medium">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-white transition-colors">
                   About
                 </Link>
               </li>

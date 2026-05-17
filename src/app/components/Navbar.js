@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="relative z-50 border-b border-white/10 bg-gradient-to-br from-[#0c2557]/80 via-[#1d3a7a]/80 to-[#0f1f42]/80 px-6 py-3 backdrop-blur-md md:px-12">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0">
           <div className="relative h-20 w-56 sm:h-24 sm:w-64 md:h-28 md:w-72 lg:h-32 lg:w-80 rounded-lg flex-shrink-0">
             <Image
               src="/newlogo 1.png"
@@ -23,10 +23,10 @@ const Navbar = () => {
 
         {/* Right CTA */}
         <div className="flex items-center gap-6">
-          <Link href="#about" className="text-sm font-medium text-white/85 hover:text-white transition">
+          <Link href="/about" className="text-sm font-medium text-white/85 hover:text-white transition">
             About
           </Link>
-          <Link href="#contact" className="text-sm font-medium text-white/85 hover:text-white transition">
+          <Link href="/#contact" className="text-sm font-medium text-white/85 hover:text-white transition">
             Contact
           </Link>
           <Link
