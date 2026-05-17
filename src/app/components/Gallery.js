@@ -12,12 +12,8 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="bg-[#0f1f42] py-24 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#1a0f3c] py-24 px-6 md:px-12 relative overflow-hidden">
       <div className="mx-auto max-w-7xl relative">
-        {/* Decorative Blur */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#9C4A9C]/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#36E1FF]/10 rounded-full blur-[120px] pointer-events-none"></div>
-
         {/* Main Container */}
         <div className="relative z-10 mt-12">
           {/* BORDER STYLE LIKE IMAGE */}
