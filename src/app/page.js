@@ -25,10 +25,10 @@ export default function Home() {
         <AdmissionsSection />
         <CardsSection />
         <ContactForm />
-        
+
         {/* Final Sections blended into dark blue */}
-        <div className="bg-[#0f1f42]">
-          <Gallery />
+        <Gallery />
+        <div className="xl:-mt-44">
           <Footer />
         </div>
       </main>
