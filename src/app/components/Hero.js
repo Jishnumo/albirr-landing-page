@@ -175,7 +175,7 @@ const Hero = () => {
       <div className="relative z-10 mx-auto max-w-7xl flex flex-col gap-10">
         <div className="grid gap-8 lg:gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center space-y-4 sm:space-y-8 text-left z-20">
-            <h1 className="text-[22px] sm:text-[36px] md:text-[46px] lg:text-[50px] font-bold leading-[1.2] text-white whitespace-nowrap">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[46px] lg:text-[50px] font-bold leading-[1.2] text-white whitespace-nowrap">
               Shaping Future <br />
               Generations with Faith <br />
               and Knowledge
@@ -185,16 +185,17 @@ const Hero = () => {
               worldwide.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
+            <div className="flex flex-row items-center justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Link
                 href="#"
-                className="w-full sm:w-auto relative inline-flex items-center justify-center rounded-xl bg-[#9C4A9C] px-6 py-2.5 sm:px-10 sm:py-4 text-xs sm:text-base font-bold text-white shadow-[0_10px_40px_rgba(156,74,156,0.3)] transition hover:brightness-125 active:scale-95 min-w-35 sm:min-w-50"
+                className="w-auto sm:w-auto relative inline-flex items-center justify-center rounded-xl bg-[#9C4A9C] box-border px-4 sm:px-5 py-2.5 sm:py-4 text-xs sm:text-base font-bold text-white shadow-[0_10px_40px_rgba(156,74,156,0.3)] transition hover:brightness-125 active:scale-95 min-w-28 sm:min-w-28 border-2 border-transparent h-[44px] sm:h-[56px]"
               >
                 Join Us
               </Link>
+
               <Link
                 href="#"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/40 bg-transparent px-6 py-2.5 sm:px-10 sm:py-4 text-xs sm:text-base font-bold text-white transition hover:border-white hover:bg-white/5 active:scale-95 min-w-35 sm:min-w-50"
+                className="w-auto sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/40 bg-transparent box-border px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-white transition hover:border-white hover:bg-white/5 active:scale-95 min-w-32 sm:min-w-44 h-[44px] sm:h-[56px]"
               >
                 Learn More
               </Link>
