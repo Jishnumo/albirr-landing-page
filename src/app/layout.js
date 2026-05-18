@@ -1,5 +1,6 @@
 import { Montserrat, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      </body>
     </html>
   );
 }

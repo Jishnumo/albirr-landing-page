@@ -31,6 +31,23 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: auto;
+}
+
+/* Lenis helpers */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 .hero-gradient {
   background: linear-gradient(to right, var(--school-blue-light) 0%, var(--school-blue-dark) 100%);
 }
@@ -42,4 +59,17 @@ body {
   opacity: 0.8;
   mix-blend-mode: normal;
   border-radius: 50%;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }

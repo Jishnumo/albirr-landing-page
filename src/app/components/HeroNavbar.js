@@ -6,10 +6,10 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 
 export default function HeroNavbar({ onMobileMenuToggle, isMenuOpen }) {
   return (
-    <div className="relative z-100 mx-auto flex items-center justify-between pb-6 md:pt-0 md:pb-8 lg:pt-0 lg:pb-10">
+    <div className="relative z-100 mx-auto flex items-center justify-between gap-3 pb-6 md:pt-0 md:pb-8 lg:pt-0 lg:pb-10">
       {/* Logo */}
-      <Link href="/" className="shrink-0 relative z-101">
-        <div className="relative h-20 w-56 sm:h-24 sm:w-64 md:h-28 md:w-72 lg:h-32 lg:w-80 rounded-lg shrink-0">
+      <Link href="/" className="min-w-0 shrink relative z-101">
+        <div className="relative h-16 w-40 sm:h-24 sm:w-64 md:h-28 md:w-72 lg:h-32 lg:w-80 rounded-lg">
           <Image
             src="/newlogo 1.png"
             alt="AL-BIRR Schools Logo"
@@ -73,7 +73,7 @@ export default function HeroNavbar({ onMobileMenuToggle, isMenuOpen }) {
 
       {/* Mobile Menu Toggle */}
       <button
-        className="relative z-101 flex xl:hidden p-2 items-center justify-center text-white"
+        className="relative z-101 flex shrink-0 xl:hidden p-2 items-center justify-center text-white"
         onClick={onMobileMenuToggle}
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         type="button"

@@ -126,34 +126,34 @@ const Hero = () => {
       <div className="relative z-10 mx-auto max-w-7xl flex flex-col gap-10">
         <div className="grid gap-8 lg:gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center space-y-4 sm:space-y-8 text-left z-20">
-            <h1 className="text-[28px] sm:text-[36px] md:text-[46px] lg:text-[50px] font-bold leading-[1.2] text-white whitespace-nowrap">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[46px] lg:text-[50px] font-bold leading-[1.2] text-white animate-[heroIn_900ms_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none">
               Shaping Future <br />
               Generations with Faith <br />
               and Knowledge
             </h1>
-            <p className="max-w-md text-xs leading-relaxed text-white/85 sm:text-lg">
+            <p className="max-w-md text-xs leading-relaxed text-white/85 sm:text-lg animate-[heroIn_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:140ms] motion-reduce:animate-none">
               Delivering quality Islamic education through 350+ branches
               worldwide.
             </p>
 
-            <div className="flex flex-row items-center justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
+            <div className="flex flex-row flex-wrap items-center justify-start gap-3 sm:gap-4 pt-2 sm:pt-4 animate-[heroIn_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:240ms] motion-reduce:animate-none">
               <Link
                 href="#"
-                className="w-auto sm:w-auto relative inline-flex items-center justify-center rounded-xl bg-[#9C4A9C] box-border px-4 sm:px-5 py-2.5 sm:py-4 text-xs sm:text-base font-bold text-white shadow-[0_10px_40px_rgba(156,74,156,0.3)] transition hover:brightness-125 active:scale-95 min-w-28 sm:min-w-28 border-2 border-transparent h-11 sm:h-14"
+                className="w-auto relative inline-flex items-center justify-center rounded-xl bg-[#9C4A9C] box-border px-4 sm:px-5 py-2.5 sm:py-4 text-xs sm:text-base font-bold text-white shadow-[0_10px_40px_rgba(156,74,156,0.3)] transition hover:brightness-125 active:scale-95 min-w-28 border-2 border-transparent h-11 sm:h-14"
               >
                 Join Us
               </Link>
 
               <Link
                 href="#"
-                className="w-auto sm:w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/40 bg-transparent box-border px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-white transition hover:border-white hover:bg-white/5 active:scale-95 min-w-32 sm:min-w-44 h-11 sm:h-14"
+                className="w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/40 bg-transparent box-border px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-white transition hover:border-white hover:bg-white/5 active:scale-95 min-w-32 sm:min-w-44 h-11 sm:h-14"
               >
                 Learn More
               </Link>
             </div>
           </div>
 
-          <div className="relative lg:col-span-5 xl:col-span-6 flex items-center justify-center lg:justify-end overflow-visible mt-6 sm:mt-8 lg:mt-0 px-4 sm:px-0 z-10">
+          <div className="relative lg:col-span-5 xl:col-span-6 flex items-center justify-center lg:justify-end overflow-visible mt-6 sm:mt-8 lg:mt-0 px-4 sm:px-0 z-10 animate-[heroIn_950ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:160ms] motion-reduce:animate-none">
             <Image
               src="/first_image.png"
               alt="Students learning with Al-Birr Schools"
@@ -166,7 +166,7 @@ const Hero = () => {
         </div>
 
         {/* Quote Bar (merged into Hero so it is part of the initial viewport section) */}
-        <div className="relative z-20 flex justify-center">
+        <div className="relative z-20 flex justify-center animate-[heroIn_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:320ms] motion-reduce:animate-none">
           <div className="relative w-full max-w-275 min-h-15 md:min-h-21 lg:min-h-22.5 flex items-center justify-center px-8 py-4">
             <Image
               src="/Rectangle.png"

@@ -18,17 +18,17 @@ const Gallery = () => {
       { key: "news", label: "News & Media" },
       { key: "downloads", label: "Downloads" },
     ],
-    []
+    [],
   );
 
   const [activeTab, setActiveTab] = useState("gallery");
   const activeIndex = tabs.findIndex((t) => t.key === activeTab);
 
   return (
-    <section className="bg-[#1a0f3c] py-24 px-6 md:px-12 relative overflow-hidden">
+    <section className="bg-[#1a0f3c] py-24 px-6 md:px-12 relative overflow-hidden z-20">
       <div className="mx-auto max-w-7xl relative">
         {/* Main Container */}
-        <div className="relative z-10 mt-12">
+        <div className="relative z-30 mt-12">
           {/* BORDER STYLE LIKE IMAGE */}
           <div className="relative rounded-4xl md:rounded-5xl">
             {/* LEFT TOP CORNER */}

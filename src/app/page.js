@@ -7,28 +7,41 @@ import CardsSection from "./components/CardsSection";
 import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-school-navy text-white">
       <main>
-        {/* Main Sections */}
         {/* Hero and About blended as one continuous dark section */}
         <div className="bg-[#0f1f42]">
-          <Hero />
-          <AboutSection />
+          <Reveal delay={0}>
+            <Hero />
+          </Reveal>
+          <Reveal delay={120}>
+            <AboutSection />
+          </Reveal>
         </div>
-        <Features />
-        <ChairmanMessage />
-        <AdmissionsSection />
-        <CardsSection />
-        <ContactForm />
+
+        <Reveal delay={80}>
+          <Features />
+        </Reveal>
+        <Reveal delay={80}>
+          <ChairmanMessage />
+        </Reveal>
+        <Reveal delay={80}>
+          <AdmissionsSection />
+        </Reveal>
+        <Reveal delay={80}>
+          <CardsSection />
+        </Reveal>
+        <Reveal delay={80}>
+          <ContactForm />
+        </Reveal>
 
         {/* Final Sections blended into dark blue */}
         <Gallery />
-        <div className="xl:-mt-44">
-          <Footer />
-        </div>
+        <Footer />
       </main>
     </div>
   );
