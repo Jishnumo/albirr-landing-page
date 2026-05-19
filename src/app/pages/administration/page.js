@@ -124,6 +124,7 @@ const academicBodyMembers = [
 ];
 
 const AdministrationPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("administration");
 
   const tabs = [
@@ -138,7 +139,7 @@ const AdministrationPage = () => {
   const renderLeaderSection = (title, leaders, cols = 3) => {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight border-b pb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight border-b pb-2">
           {title}
         </h2>
 
@@ -223,17 +224,65 @@ const AdministrationPage = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-3 flex flex-col justify-start">
-              <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-none">
+              {/* Mobile/Tablet Dropdown Select (Light Theme) */}
+              <div className="relative lg:hidden mb-6 w-full z-30">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                >
+                  <span>{tabs.find(t => t.id === activeTab).label}</span>
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isOpen && (
+                  <>
+                    {/* Overlay to close the dropdown */}
+                    <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-2xl bg-white border border-black/5 shadow-xl p-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      {tabs.map((tab) => {
+                        const isActive = tab.id === activeTab;
+                        return (
+                          <button
+                            key={tab.id}
+                            onClick={() => {
+                              setActiveTab(tab.id);
+                              setIsOpen(false);
+                            }}
+                            className={`w-full flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
+                                : "text-gray-600 hover:text-gray-950"
+                              }`}
+                          >
+                            <span>{tab.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Desktop Navigation Sidebar */}
+              <nav className="hidden lg:flex flex-col gap-2">
                 {tabs.map((tab) => {
                   const isActive = tab.id === activeTab;
                   return (
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
-                      className={`flex items-center px-6 py-3 rounded-xl lg:rounded-full text-left text-sm md:text-base font-bold whitespace-nowrap lg:whitespace-normal transition-all duration-300 select-none cursor-pointer ${isActive
-                        ? "bg-black/[0.08] border border-black/5 text-gray-900 shadow-sm font-extrabold"
-                        : "text-gray-600 hover:text-gray-950 hover:bg-black/[0.03] border border-transparent"
-                      }`}
+                      className={`flex items-center px-6 py-3 rounded-full text-left text-sm md:text-base font-bold transition-all duration-300 select-none ${isActive
+                        ? "text-gray-950 font-extrabold"
+                        : "text-gray-500 font-medium hover:text-gray-950"
+                        }`}
                     >
                       <span>{tab.label}</span>
                     </button>
@@ -245,7 +294,8 @@ const AdministrationPage = () => {
             {/* Main Content — switches based on active tab */}
             <div className="lg:col-span-9 flex flex-col gap-12 text-left">
 
-              <style dangerouslySetInnerHTML={{ __html: `
+              <style dangerouslySetInnerHTML={{
+                __html: `
                 .admin-swiper .swiper-pagination-bullet {
                   background-color: #e2e8f0;
                   opacity: 1;
@@ -284,7 +334,7 @@ const AdministrationPage = () => {
               {/* TAB: District Co-ordinators */}
               {activeTab === "district-coordinators" && (
                 <div className="space-y-6">
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight border-b pb-2">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight border-b pb-2">
                     DISTRICT CO-ORDINATORS
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">

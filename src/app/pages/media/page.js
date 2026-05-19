@@ -13,7 +13,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Search,
-  Eye
+  Eye,
+  X
 } from "lucide-react";
 import Footer from "../../components/Footer";
 
@@ -101,6 +102,7 @@ const downloadItems = [
 function MediaContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("gallery");
 
   // Lightbox State
@@ -181,7 +183,7 @@ function MediaContent() {
 
 
       {/* Main Content Body */}
-      <main className="relative z-10 flex-grow w-full max-w-none px-4 sm:px-6 md:px-10 xl:px-12 pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-20 flex flex-col justify-center">
+      <main className="relative z-10 flex-grow w-full max-w-none px-4 sm:px-6 md:px-10 xl:px-12 pt-40 sm:pt-44 md:pt-48 lg:pt-52 pb-20 flex flex-col justify-center">
         {/* Page Title */}
         <div className="mb-8 md:mb-12 text-left animate-in fade-in slide-in-from-bottom duration-700">
           <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
@@ -195,17 +197,67 @@ function MediaContent() {
 
             {/* Sidebar Tab Selector */}
             <div className="lg:col-span-3 flex flex-col justify-start">
-              <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none border-b border-white/5 lg:border-none">
+              {/* Mobile/Tablet Dropdown Select (Dark Theme) */}
+              <div className="relative lg:hidden mb-6 w-full z-30">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs sm:text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                >
+                  <span>{tabs.find(t => t.id === activeTab).label}</span>
+                  <svg
+                    className={`w-4 h-4 text-white/70 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isOpen && (
+                  <>
+                    {/* Overlay to close the dropdown */}
+                    <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+                    
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-2xl bg-[#0f1f42]/95 border border-white/10 backdrop-blur-lg shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      {tabs.map((tab) => {
+                        const isActive = activeTab === tab.id;
+                        return (
+                          <button
+                            key={tab.id}
+                            onClick={() => {
+                              handleTabChange(tab.id);
+                              setIsOpen(false);
+                            }}
+                            className={`w-full flex items-center px-4 py-3 rounded-xl text-left text-xs sm:text-sm md:text-base font-medium transition-all duration-200 ${
+                              isActive
+                                ? "text-[#ff944d] font-bold"
+                                : "text-white/70 hover:text-white"
+                            }`}
+                          >
+                            <span>{tab.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Desktop Navigation Sidebar */}
+              <nav className="hidden lg:flex flex-col gap-2">
                 {tabs.map((tab) => {
                   const isActive = activeTab === tab.id;
                   return (
                     <button
                       key={tab.id}
                       onClick={() => handleTabChange(tab.id)}
-                      className={`flex items-center justify-center lg:justify-start px-4 py-2.5 lg:px-6 lg:py-3.5 rounded-xl lg:rounded-full text-center lg:text-left text-xs sm:text-sm md:text-base font-bold whitespace-nowrap lg:whitespace-normal transition-all duration-300 select-none cursor-pointer border ${isActive
-                        ? "bg-white/15 border-white/20 text-[#ff944d] shadow-lg backdrop-blur-md font-extrabold"
-                        : "text-white/70 hover:text-white hover:bg-white/5 border-transparent"
-                        }`}
+                      className={`flex items-center px-6 py-3 rounded-full text-left text-xs sm:text-sm md:text-base font-bold transition-all duration-300 select-none cursor-pointer ${
+                        isActive
+                          ? "text-[#ff944d] font-extrabold"
+                          : "text-white/70 hover:text-white"
+                      }`}
                     >
                       <span>{tab.label}</span>
                     </button>

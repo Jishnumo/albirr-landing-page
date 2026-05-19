@@ -6,6 +6,7 @@ import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-
 import Footer from "../../components/Footer";
 
 const InfrastructurePage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const tabs = [
     { id: "about", label: "About", path: "/pages/about", icon: BookOpen },
@@ -58,16 +59,62 @@ const InfrastructurePage = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-3 flex flex-col justify-start">
-              <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-none">
+              {/* Mobile/Tablet Dropdown Select (Light Theme) */}
+              <div className="relative lg:hidden mb-6 w-full z-30">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                >
+                  <span>{tabs.find(t => t.id === "infrastructure").label}</span>
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isOpen && (
+                  <>
+                    {/* Overlay to close the dropdown */}
+                    <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-2xl bg-white border border-black/5 shadow-xl p-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      {tabs.map((tab) => {
+                        const isActive = tab.id === "infrastructure";
+                        return (
+                          <Link
+                            key={tab.id}
+                            href={tab.path}
+                            onClick={() => setIsOpen(false)}
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
+                                : "text-gray-600 hover:text-gray-950"
+                              }`}
+                          >
+                            <span>{tab.label}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Desktop Navigation Sidebar */}
+              <nav className="hidden lg:flex flex-col gap-2">
                 {tabs.map((tab) => {
                   const isActive = tab.id === "infrastructure";
                   return (
                     <Link
                       key={tab.id}
                       href={tab.path}
-                      className={`flex items-center px-6 py-3 rounded-xl lg:rounded-full text-left text-sm md:text-base font-bold whitespace-nowrap lg:whitespace-normal transition-all duration-300 select-none ${isActive
-                        ? "bg-black/[0.08] border border-black/5 text-gray-900 shadow-sm font-extrabold"
-                        : "text-gray-600 hover:text-gray-950 hover:bg-black/[0.03] border border-transparent"
+                      className={`flex items-center px-6 py-3 rounded-full text-left text-sm md:text-base font-bold transition-all duration-300 select-none ${isActive
+                        ? "text-gray-950 font-extrabold"
+                        : "text-gray-500 font-medium hover:text-gray-950"
                         }`}
                     >
                       <span>{tab.label}</span>
@@ -82,25 +129,25 @@ const InfrastructurePage = () => {
               <div className="space-y-6 text-left text-[0.72rem] sm:text-[0.78rem] lg:text-[0.82rem]">
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">INFRASTRUCTURE</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">INFRASTRUCTURE</h2>
                   <p className="text-gray-700 font-normal leading-snug">At Albirr we provide a totally balanced environment focused not only on academic progress of the child but also their physical, social and emotional development. All our centres boasts of state of the art infrastructure with libraries, laboratories for computer and science, play area and well equipped classrooms. We provide a conducive environment for children to play as well as explore and learn. The classrooms are very spacious and well-lit and ventilated keeping in mind the comfort and free movement of the children. Our smart and Hi-tech classrooms are equipped with Projector, Television, White board, Green board, Pin board etc. They are painted with bright colours and adorned with various colourful teaching and learning aids for better learning experiences.</p>
                   <p className="text-gray-700 font-normal leading-snug">All the required equipment are available in the school premises to encourage play and the spirit of sports in children. All our centres have a dedicated and spacious area for children to play. This area is equipped with state-of-the-art play equipment and learning collaterals ensuring their safety and security.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">OUR STRUCTURE</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">OUR STRUCTURE</h2>
                   <p className="text-gray-700 font-normal leading-snug">Albirr provides a holistic education to children from pre-primary to primary grades based on the teachings of Islam as well as an Activity-based curriculum.</p>
                   <p className="text-gray-700 font-normal leading-snug">Pre-Primary education lays the foundation of a child's academic and social life. Hence to build a strong foundation in the early years of a child we use the right mix of instruction based and learner centric methods along with hands on activities for their academic success. Our program aims to develop the cognitive skills, fine and gross motor skills, emotional and social development, spiritual development and communication skills, other life skills and creativity in children.</p>
                   <p className="text-gray-700 font-normal leading-snug">The Primary School follows a curriculum which is designed, according to international standards which equally emphasizes on the mastery of languages, inculcation of good moral and ethical values, development of good physical health and on academics. The curriculum lays emphasis on the development of a balanced and holistic Islamic personality. The school's curriculum strives to an integrated programme where Islamic teachings and values are imbedded across all subject areas. The school is committed to transforming children to become strong and highly educated Muslims for whom Islam is a complete way of life. Meanwhile we ensure inculcating national and democratic values that engage him/her to live in a plural society.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">OUR BRAND</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">OUR BRAND</h2>
                   <p className="text-gray-700 font-normal leading-snug">Albirr schools is one of the fastest growing preschool chains in the state of Kerala, Karnataka and Oman. Owing to our scientifically researched and result-oriented approach of teaching, committed and strong value upbringing Albirr schools has been able to reach this stage of success. The success of Albirr is also due to its trained, qualified and committed team.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">GOVERNANCE AND AFFILIATION</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">GOVERNANCE AND AFFILIATION</h2>
                   <p className="text-gray-700 font-normal leading-snug">The Albirr Team constitutes a governing body in order to maintain the required standards in all their centres. This governing body coordinates with the Administration and the Academic faculty to provide the services required for the smooth running of the centres of Albirr Schools. Albirr also provides other facilities like teacher's training, monitoring, distribution of study materials, uniforms and other equipment.</p>
                   <p className="text-gray-700 font-normal leading-snug">An inspection team appointed by the governing body inspects the infrastructure and academic progress of the centres. The affiliation is granted or upgraded only on the basis of the report provided by this team. An award is also offered to those who achieve benchmark setup by Albirr team which keeps the quality and functionality. If any laxity in adhering to any instruction is found on further inspections, the body takes action against the school which could also lead to the cancellation of their affiliation.</p>
                 </div>

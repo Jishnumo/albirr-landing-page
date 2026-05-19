@@ -6,6 +6,7 @@ import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-
 import Footer from "../../components/Footer";
 
 const AboutPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const tabs = [
     { id: "about", label: "About", path: "/pages/about", icon: BookOpen },
@@ -58,16 +59,62 @@ const AboutPage = () => {
 
             {/* Sidebar Tab Selector */}
             <div className="lg:col-span-3 xl:col-span-3 flex flex-col justify-start">
-              <nav className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none border-b border-white/5 lg:border-none">
+              {/* Mobile/Tablet Dropdown Select */}
+              <div className="relative lg:hidden mb-6 w-full z-30">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs lg:text-sm xl:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                >
+                  <span>{tabs.find(t => t.id === "about").label}</span>
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isOpen && (
+                  <>
+                    {/* Overlay to close the dropdown */}
+                    <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-2xl bg-[#0f1f42]/95 border border-white/10 backdrop-blur-lg shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      {tabs.map((tab) => {
+                        const isActive = tab.id === "about";
+                        return (
+                          <Link
+                            key={tab.id}
+                            href={tab.path}
+                            onClick={() => setIsOpen(false)}
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-xs lg:text-sm xl:text-base font-medium transition-all duration-200 ${isActive
+                              ? "text-white font-bold"
+                              : "text-white/70 hover:text-white"
+                              }`}
+                          >
+                            <span>{tab.label}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Desktop Navigation Sidebar */}
+              <nav className="hidden lg:flex flex-col gap-2">
                 {tabs.map((tab) => {
                   const isActive = tab.id === "about";
                   return (
                     <Link
                       key={tab.id}
                       href={tab.path}
-                      className={`flex items-center px-4 py-2 lg:px-6 lg:py-3 rounded-lg lg:rounded-full text-left text-xs lg:text-sm xl:text-base font-bold whitespace-nowrap lg:whitespace-normal transition-all duration-300 select-none ${isActive
-                        ? "bg-white/15 border border-white/10 text-white shadow-lg backdrop-blur-md"
-                        : "text-white/70 hover:text-white hover:bg-white/5 border border-transparent"
+                      className={`flex items-center px-6 py-3 rounded-full text-left text-xs lg:text-sm xl:text-base font-bold transition-all duration-300 select-none ${isActive
+                        ? "text-white font-extrabold"
+                        : "text-white/60 hover:text-white"
                         }`}
                     >
                       <span>{tab.label}</span>
