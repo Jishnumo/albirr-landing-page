@@ -1,6 +1,8 @@
 import { Montserrat, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import WhatsAppWidget from "./components/WhatsAppWidget";
+import HeroNavbar from "./components/HeroNavbar";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -24,7 +26,11 @@ export default function RootLayout({ children }) {
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <HeroNavbar />
+          {children}
+        </SmoothScrollProvider>
+        <WhatsAppWidget />
       </body>
     </html>
   );

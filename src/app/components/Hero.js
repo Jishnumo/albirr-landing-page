@@ -9,7 +9,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative overflow-visible px-4 md:px-12 pt-0 pb-10 md:pb-14">
+    <section className="relative overflow-visible px-4 md:px-12 pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-10 md:pb-14">
       {/* Background Shape Image - Moved to leftmost upper corner */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -25,101 +25,6 @@ const Hero = () => {
         <div className="absolute -right-32 -top-32 h-[300px] w-[300px] md:h-[600px] md:w-[600px] rounded-full bg-[#F05B28]/30 blur-[60px] md:blur-[100px]" />
         <div className="absolute right-20 top-32 h-[250px] w-[250px] md:h-[500px] md:w-[500px] rounded-full bg-[#9C4A9C]/25 blur-[60px] md:blur-[100px]" />
         <div className="absolute -left-40 top-20 h-[225px] w-[225px] md:h-[450px] md:w-[450px] rounded-full bg-[#36E1FF]/15 blur-[60px] md:blur-[100px]" />
-      </div>
-
-      {/* Navbar - Pulled tightly to top */}
-      <HeroNavbar
-        onMobileMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-        isMenuOpen={isMenuOpen}
-      />
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 z-110 xl:hidden transition-opacity duration-300 ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-        aria-hidden={!isMenuOpen}
-      >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-[#0f1f42]/70"
-          onClick={() => setIsMenuOpen(false)}
-        />
-
-        {/* Drawer */}
-        <div
-          className={`absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#0f1f42] shadow-2xl transition-transform duration-300 ease-out ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          {/* Close button (same top-right position as hamburger) */}
-          <button
-            className="absolute top-6 right-6 p-2 text-white/80 hover:text-white"
-            onClick={() => setIsMenuOpen(false)}
-            type="button"
-            aria-label="Close menu"
-          >
-            <X className="h-8 w-8" />
-          </button>
-
-          <div className="flex h-full flex-col items-start justify-center gap-8 px-8">
-            <Link
-              href="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-normal text-white hover:text-[#36E1FF] transition"
-            >
-              Home
-            </Link>
-            <Link
-              href="/pages/about"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-normal text-white hover:text-[#36E1FF] transition"
-            >
-              About
-            </Link>
-            <Link
-              href="#"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-normal text-white hover:text-[#36E1FF] transition"
-            >
-              Academics
-            </Link>
-            <Link
-              href="#"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-normal text-white hover:text-[#36E1FF] transition"
-            >
-              Administration
-            </Link>
-            <Link
-              href="#"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-normal text-white hover:text-[#36E1FF] transition"
-            >
-              Media
-            </Link>
-
-            <div className="h-px w-24 bg-white/20" />
-
-            <Link
-              href="/#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-xl font-normal text-white/80 hover:text-white transition"
-            >
-              Contact
-            </Link>
-            <Link
-              href="#"
-              onClick={() => setIsMenuOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#9C4A9C] px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-[#9C4A9C]/30 ring-1 ring-white/10 transition-all hover:brightness-110 active:scale-95"
-            >
-              Student Portal
-              <ArrowUpRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* Hero Content */}
@@ -138,14 +43,14 @@ const Hero = () => {
 
             <div className="flex flex-row flex-wrap items-center justify-start gap-3 sm:gap-4 pt-2 sm:pt-4 animate-[heroIn_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:240ms] motion-reduce:animate-none">
               <Link
-                href="#"
+                href="/#contact"
                 className="w-auto relative inline-flex items-center justify-center rounded-xl bg-[#9C4A9C] box-border px-4 sm:px-5 py-2.5 sm:py-4 text-xs sm:text-base font-bold text-white shadow-[0_10px_40px_rgba(156,74,156,0.3)] transition hover:brightness-125 active:scale-95 min-w-28 border-2 border-transparent h-11 sm:h-14"
               >
                 Join Us
               </Link>
 
               <Link
-                href="#"
+                href="/pages/about"
                 className="w-auto inline-flex items-center justify-center rounded-xl border-2 border-white/40 bg-transparent box-border px-5 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-white transition hover:border-white hover:bg-white/5 active:scale-95 min-w-32 sm:min-w-44 h-11 sm:h-14"
               >
                 Learn More

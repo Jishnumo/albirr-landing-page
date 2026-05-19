@@ -38,7 +38,7 @@ const AboutSection = () => {
 
               <div className="mt-12 flex justify-center lg:justify-start">
                 <Link
-                  href="#"
+                  href="/pages/about"
                   className="group inline-flex items-center gap-1 text-white font-regular text-base md:text-base transition-colors hover:text-gray-200"
                 >
                   Learn More

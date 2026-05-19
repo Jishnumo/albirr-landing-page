@@ -35,7 +35,7 @@ const ChairmanMessage = () => {
                   bright colours and adorned with various colourful teaching and
                   learning aids for better learning experiences.
                   <Link
-                    href="#"
+                    href="/pages/chairmansmessage"
                     className="text-[#26335D] font-regular underline ml-2 hover:text-[#b35ab5] transition"
                   >
                     Know More
@@ -45,7 +45,7 @@ const ChairmanMessage = () => {
 
               <div className="mt-12 flex justify-center lg:justify-start">
                 <Link
-                  href="#"
+                  href="/pages/chairmansmessage"
                   className="group inline-flex items-center gap-1 text-[#9C4A9C] font-regular text-base md:text-base transition-colors hover:text-[#b35ab5]"
                 >
                   Learn More

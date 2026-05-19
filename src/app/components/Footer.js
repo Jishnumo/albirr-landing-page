@@ -51,29 +51,29 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/pages/about"
                   className="hover:text-white transition-colors"
                 >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/#contact" className="hover:text-white transition-colors">
                   Admission
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/#contact" className="hover:text-white transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/media?tab=gallery" className="hover:text-white transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/media?tab=news" className="hover:text-white transition-colors">
                   News & Events
                 </Link>
               </li>
@@ -87,32 +87,32 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
             </h4>
             <ul className="space-y-2 sm:space-y-3 md:space-y-4 text-gray-400 text-xs sm:text-sm font-medium">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/academics" className="hover:text-white transition-colors">
                   Curriculum
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/academics" className="hover:text-white transition-colors">
                   Academics
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/infrastructure" className="hover:text-white transition-colors">
                   Infrastructure
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/ourschools" className="hover:text-white transition-colors">
                   Albirr Schools
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/administration" className="hover:text-white transition-colors">
                   Albirr Members
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/pages/ourschools" className="hover:text-white transition-colors">
                   Our Schools
                 </Link>
               </li>

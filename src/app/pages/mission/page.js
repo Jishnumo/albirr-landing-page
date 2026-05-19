@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Menu, X, BookOpen, Target, Compass, Building, User } from "lucide-react";
+import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-react";
 import Footer from "../../components/Footer";
 
 const MissionVisionPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const tabs = [
     { id: "about", label: "About", path: "/pages/about", icon: BookOpen },
@@ -35,83 +34,7 @@ const MissionVisionPage = () => {
           <div className="absolute inset-0 bg-black/25" />
         </div>
 
-        {/* Navbar — sits on top of image */}
-        <header className="relative z-50 w-full px-4 sm:px-6 md:px-8 xl:px-12 pt-4 pb-4 md:pt-6">
-          <div className="flex items-center justify-between">
 
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0 relative z-[101]">
-              <div className="relative h-16 w-48 sm:h-20 sm:w-56 md:h-24 md:w-64 lg:h-28 lg:w-72">
-                <Image
-                  src="/newlogo 1.png"
-                  alt="AL-BIRR Schools Logo"
-                  fill
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
-            </Link>
-
-            {/* Desktop Nav */}
-            <div className="hidden xl:flex items-center gap-8">
-              <Link href="/" className="text-sm font-semibold text-white/90 hover:text-white transition">Home</Link>
-              <Link href="/pages/about" className="text-sm font-bold text-white border-b-2 border-white pb-1 transition">About</Link>
-              <Link href="#" className="text-sm font-medium text-white/80 hover:text-white transition">Academics</Link>
-              <Link href="#" className="text-sm font-medium text-white/80 hover:text-white transition">Administration</Link>
-              <Link href="#" className="text-sm font-medium text-white/80 hover:text-white transition">Media</Link>
-            </div>
-
-            {/* Desktop CTA */}
-            <div className="hidden xl:flex items-center gap-6">
-              <Link href="/#contact" className="text-sm font-semibold text-white/90 hover:text-white transition">Contact</Link>
-              <Link
-                href="#"
-                className="group flex items-center gap-2 rounded-lg bg-[#9C4A9C] px-5 py-2.5 text-sm font-bold text-white transition-all hover:brightness-110 active:scale-95 shadow-md"
-              >
-                Student Portal
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative z-[101] flex xl:hidden p-2 text-white focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
-            </button>
-          </div>
-
-          {/* Mobile Drawer */}
-          {isMenuOpen && (
-            <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0f1f42] xl:hidden animate-in fade-in duration-300">
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="absolute top-6 right-6 p-2 text-white/85 hover:text-white focus:outline-none"
-              >
-                <X className="h-8 w-8" />
-              </button>
-              <div className="flex flex-col items-center gap-8 text-center px-6 w-full max-w-sm">
-                <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Home</Link>
-                <Link href="/pages/about" onClick={() => setIsMenuOpen(false)} className="text-2xl font-semibold text-[#36E1FF] transition">About</Link>
-                <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Academics</Link>
-                <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Administration</Link>
-                <Link href="#" onClick={() => setIsMenuOpen(false)} className="text-2xl font-normal text-white hover:text-[#36E1FF] transition">Media</Link>
-                <div className="h-px w-24 bg-white/20 my-4" />
-                <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-normal text-white/80 hover:text-white transition">Contact</Link>
-                <Link
-                  href="#"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#9C4A9C] px-8 py-4 text-lg font-semibold text-white shadow-xl transition-all active:scale-95"
-                >
-                  Student Portal
-                  <ArrowUpRight className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-          )}
-        </header>
 
         {/* Page title — pinned to bottom-left of header banner */}
         <div className="absolute bottom-4 left-6 sm:left-8 md:left-10 xl:left-12 z-10">

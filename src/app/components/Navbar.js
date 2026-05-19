@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {/* Right CTA */}
         <div className="flex items-center gap-6">
-          <Link href="/about" className="text-sm font-medium text-white/85 hover:text-white transition">
+          <Link href="/pages/about" className="text-sm font-medium text-white/85 hover:text-white transition">
             About
           </Link>
           <Link href="/#contact" className="text-sm font-medium text-white/85 hover:text-white transition">

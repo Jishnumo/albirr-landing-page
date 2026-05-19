@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -94,6 +95,8 @@ const CardContent = ({ card }) => {
 
 const CardsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [mobileSwiperInstance, setMobileSwiperInstance] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -156,9 +159,29 @@ const CardsSection = () => {
 
         {/* Mobile Swiper (Coverflow) */}
         <div
-          className={`block md:hidden transform transition-all duration-1000 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"}`}
+          className={`block md:hidden transform transition-all duration-1000 ease-out relative ${isVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"}`}
         >
+          {/* Mobile Navigation Arrows */}
+          <button
+            onClick={() => mobileSwiperInstance?.slidePrev()}
+            className="absolute left-[-12px] top-[40%] -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 border border-gray-200 text-[#26335D] shadow-md active:scale-95 transition-all duration-300 cursor-pointer"
+            aria-label="Previous slide"
+            suppressHydrationWarning={true}
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          <button
+            onClick={() => mobileSwiperInstance?.slideNext()}
+            className="absolute right-[-12px] top-[40%] -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 border border-gray-200 text-[#26335D] shadow-md active:scale-95 transition-all duration-300 cursor-pointer"
+            aria-label="Next slide"
+            suppressHydrationWarning={true}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
           <Swiper
+            onSwiper={setMobileSwiperInstance}
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
@@ -188,11 +211,31 @@ const CardsSection = () => {
 
         {/* Desktop Slider */}
         <div
-          className={`hidden md:block w-full max-w-7xl mx-auto transform transition-all duration-1000 ease-out ${
+          className={`hidden md:block w-full max-w-7xl mx-auto transform transition-all duration-1000 ease-out relative ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"
           }`}
         >
+          {/* Desktop Navigation Arrows */}
+          <button
+            onClick={() => swiperInstance?.slidePrev()}
+            className="absolute left-[-24px] lg:left-[-48px] top-[40%] -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white border border-gray-200 text-[#26335D] shadow-md hover:bg-[#26335D] hover:text-white hover:border-[#26335D] active:scale-95 transition-all duration-300 cursor-pointer"
+            aria-label="Previous slide"
+            suppressHydrationWarning={true}
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={() => swiperInstance?.slideNext()}
+            className="absolute right-[-24px] lg:right-[-48px] top-[40%] -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white border border-gray-200 text-[#26335D] shadow-md hover:bg-[#26335D] hover:text-white hover:border-[#26335D] active:scale-95 transition-all duration-300 cursor-pointer"
+            aria-label="Next slide"
+            suppressHydrationWarning={true}
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
           <Swiper
+            onSwiper={setSwiperInstance}
             slidesPerView={3}
             spaceBetween={40}
             loop={true}

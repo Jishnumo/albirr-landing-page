@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Gallery = () => {
   const images = [
@@ -63,6 +64,7 @@ const Gallery = () => {
                               ? "text-[#ff944d]"
                               : "text-white hover:text-[#ff944d]")
                           }
+                          suppressHydrationWarning
                         >
                           {tab.label}
                         </button>
@@ -103,14 +105,14 @@ const Gallery = () => {
                   ))}
                 </div>
 
-                {/* Mobile: gradient fade + View more CTA */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 md:hidden">
-                  <div className="absolute inset-0 bg-linear-to-t from-[#1a0f3c] via-[#1a0f3c]/85 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-4 flex justify-center">
-                    <div className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-[#9C4A9C] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#9C4A9C]/30 ring-1 ring-white/10 transition-all hover:brightness-110 active:scale-95">
-                      View more
-                    </div>
-                  </div>
+                {/* Centered View More Button */}
+                <div className="mt-12 flex justify-center">
+                  <Link
+                    href="/pages/media?tab=gallery"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#9C4A9C] px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-[#9C4A9C]/30 ring-1 ring-white/10 transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                  >
+                    View More
+                  </Link>
                 </div>
               </div>
             </div>

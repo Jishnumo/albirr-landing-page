@@ -1,21 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export default function SmoothScrollProvider({ children }) {
+  const pathname = usePathname();
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
-      // Slightly longer for a luxury feel
-      duration: 1.55,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ultra-smooth easeOutExpo
       smoothWheel: true,
       smoothTouch: false,
-      wheelMultiplier: 0.75,
-      touchMultiplier: 1,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
       infinite: false,
-      syncTouch: false,
     });
+
+    lenisRef.current = lenis;
 
     let rafId;
     const raf = (time) => {
@@ -30,6 +34,14 @@ export default function SmoothScrollProvider({ children }) {
       lenis.destroy();
     };
   }, []);
+
+  // Listen to path changes and reset scroll position to top
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
 
   return children;
 }

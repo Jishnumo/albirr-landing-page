@@ -91,7 +91,7 @@ const AdmissionsSection = () => {
 
             <div className="flex">
               <Link
-                href="#"
+                href="/#contact"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-white/40 px-6 text-sm font-medium text-white transition-colors hover:bg-white/10 hover:border-white"
               >
                 Enroll Now
