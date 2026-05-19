@@ -56,7 +56,7 @@ const ChairmansMessagePage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === "chairman").label}</span>
                   <svg
@@ -83,8 +83,8 @@ const ChairmansMessagePage = () => {
                             key={tab.id}
                             href={tab.path}
                             onClick={() => setIsOpen(false)}
-                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-bold transition-all duration-200 ${isActive
-                                ? "text-gray-950 font-extrabold"
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
                                 : "text-gray-600 hover:text-gray-950"
                               }`}
                           >

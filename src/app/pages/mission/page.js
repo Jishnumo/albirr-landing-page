@@ -59,7 +59,7 @@ const MissionVisionPage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === "mission").label}</span>
                   <svg
@@ -86,8 +86,8 @@ const MissionVisionPage = () => {
                             key={tab.id}
                             href={tab.path}
                             onClick={() => setIsOpen(false)}
-                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-bold transition-all duration-200 ${isActive
-                                ? "text-gray-950 font-extrabold"
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
                                 : "text-gray-600 hover:text-gray-950"
                               }`}
                           >
@@ -126,7 +126,7 @@ const MissionVisionPage = () => {
 
                 {/* OUR VISION */}
                 <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+                  <h2 className="text-xl sm:text-3xl font-bold text-gray-950 tracking-tight">
                     OUR VISION
                   </h2>
                   <p className="text-gray-600 font-normal leading-relaxed">
@@ -136,20 +136,20 @@ const MissionVisionPage = () => {
 
                 {/* OUR MISSION */}
                 <div className="space-y-5">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+                  <h2 className="text-xl sm:text-3xl font-bold text-gray-950 tracking-tight">
                     OUR MISSION
                   </h2>
                   <ul className="space-y-4 list-none pl-0">
                     {[
-                      "To instil the teachings of the Holy Quran and values of Sunnah.",
+                      "To instill the teachings of the Holy Quran and values of Sunnah.",
                       "Bring up a child as per 'fitrah' or his intrinsic purity.",
                       "Nurture Islamic character through Education to benefit the chid in this world and the hereafter.",
                       "To guide and teach in a way that educates socially, spiritually, physically, intellectually, and emotionally.",
-                      "Focus on a value-based education that instils honesty, integrity, compassion and mutual respect and national demographic values which will enable them to become responsible global citizens of tomorrow.",
+                      "Focus on a value-based education that instills honesty, integrity, compassion and mutual respect and national demographic values which will enable them to become responsible global citizens of tomorrow.",
                       "To foster exceptional language, communication skills and life skill in the early years of the child."
                     ].map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <span className="mt-2.5 h-2 w-2 rounded-full bg-gray-800 flex-shrink-0" />
+                        <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-gray-400 flex-shrink-0" />
                         <span className="text-gray-600 font-normal leading-relaxed">{bullet}</span>
                       </li>
                     ))}

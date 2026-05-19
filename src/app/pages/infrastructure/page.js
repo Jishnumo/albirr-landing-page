@@ -63,7 +63,7 @@ const InfrastructurePage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === "infrastructure").label}</span>
                   <svg
@@ -90,8 +90,8 @@ const InfrastructurePage = () => {
                             key={tab.id}
                             href={tab.path}
                             onClick={() => setIsOpen(false)}
-                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-bold transition-all duration-200 ${isActive
-                                ? "text-gray-950 font-extrabold"
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
                                 : "text-gray-600 hover:text-gray-950"
                               }`}
                           >
@@ -129,25 +129,25 @@ const InfrastructurePage = () => {
               <div className="space-y-6 text-left text-[0.72rem] sm:text-[0.78rem] lg:text-[0.82rem]">
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">INFRASTRUCTURE</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">INFRASTRUCTURE</h2>
                   <p className="text-gray-700 font-normal leading-snug">At Albirr we provide a totally balanced environment focused not only on academic progress of the child but also their physical, social and emotional development. All our centres boasts of state of the art infrastructure with libraries, laboratories for computer and science, play area and well equipped classrooms. We provide a conducive environment for children to play as well as explore and learn. The classrooms are very spacious and well-lit and ventilated keeping in mind the comfort and free movement of the children. Our smart and Hi-tech classrooms are equipped with Projector, Television, White board, Green board, Pin board etc. They are painted with bright colours and adorned with various colourful teaching and learning aids for better learning experiences.</p>
                   <p className="text-gray-700 font-normal leading-snug">All the required equipment are available in the school premises to encourage play and the spirit of sports in children. All our centres have a dedicated and spacious area for children to play. This area is equipped with state-of-the-art play equipment and learning collaterals ensuring their safety and security.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">OUR STRUCTURE</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">OUR STRUCTURE</h2>
                   <p className="text-gray-700 font-normal leading-snug">Albirr provides a holistic education to children from pre-primary to primary grades based on the teachings of Islam as well as an Activity-based curriculum.</p>
                   <p className="text-gray-700 font-normal leading-snug">Pre-Primary education lays the foundation of a child's academic and social life. Hence to build a strong foundation in the early years of a child we use the right mix of instruction based and learner centric methods along with hands on activities for their academic success. Our program aims to develop the cognitive skills, fine and gross motor skills, emotional and social development, spiritual development and communication skills, other life skills and creativity in children.</p>
                   <p className="text-gray-700 font-normal leading-snug">The Primary School follows a curriculum which is designed, according to international standards which equally emphasizes on the mastery of languages, inculcation of good moral and ethical values, development of good physical health and on academics. The curriculum lays emphasis on the development of a balanced and holistic Islamic personality. The school's curriculum strives to an integrated programme where Islamic teachings and values are imbedded across all subject areas. The school is committed to transforming children to become strong and highly educated Muslims for whom Islam is a complete way of life. Meanwhile we ensure inculcating national and democratic values that engage him/her to live in a plural society.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">OUR BRAND</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">OUR BRAND</h2>
                   <p className="text-gray-700 font-normal leading-snug">Albirr schools is one of the fastest growing preschool chains in the state of Kerala, Karnataka and Oman. Owing to our scientifically researched and result-oriented approach of teaching, committed and strong value upbringing Albirr schools has been able to reach this stage of success. The success of Albirr is also due to its trained, qualified and committed team.</p>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h2 className="text-base sm:text-lg font-extrabold text-gray-950 tracking-tight">GOVERNANCE AND AFFILIATION</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-950 tracking-tight">GOVERNANCE AND AFFILIATION</h2>
                   <p className="text-gray-700 font-normal leading-snug">The Albirr Team constitutes a governing body in order to maintain the required standards in all their centres. This governing body coordinates with the Administration and the Academic faculty to provide the services required for the smooth running of the centres of Albirr Schools. Albirr also provides other facilities like teacher's training, monitoring, distribution of study materials, uniforms and other equipment.</p>
                   <p className="text-gray-700 font-normal leading-snug">An inspection team appointed by the governing body inspects the infrastructure and academic progress of the centres. The affiliation is granted or upgraded only on the basis of the report provided by this team. An award is also offered to those who achieve benchmark setup by Albirr team which keeps the quality and functionality. If any laxity in adhering to any instruction is found on further inspections, the body takes action against the school which could also lead to the cancellation of their affiliation.</p>
                 </div>

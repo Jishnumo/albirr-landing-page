@@ -81,7 +81,7 @@ const ObjectivesPage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === "objectives").label}</span>
                   <svg
@@ -108,9 +108,9 @@ const ObjectivesPage = () => {
                             key={tab.id}
                             href={tab.path}
                             onClick={() => setIsOpen(false)}
-                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-bold transition-all duration-200 ${
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${
                               isActive
-                                ? "text-gray-950 font-extrabold"
+                                ? "text-gray-950 font-bold"
                                 : "text-gray-600 hover:text-gray-950"
                             }`}
                           >
@@ -148,10 +148,10 @@ const ObjectivesPage = () => {
 
               {/* OBJECTIVES Section */}
               <div className="space-y-5">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+                <h2 className="text-xl sm:text-3xl font-bold text-gray-950 tracking-tight">
                   OBJECTIVES
                 </h2>
-                <ul className="space-y-3 list-disc pl-5 text-xs sm:text-sm lg:text-[0.95rem] xl:text-base">
+                <ul className="space-y-4 list-none pl-0 text-xs sm:text-sm lg:text-[0.95rem] xl:text-base">
                   {[
                     "To provide a safe, secure and conducive environment with maternal care that supports children's academic, physical, social, emotional and moral development.",
                     "To inculcate in children the values of piety, honesty, cooperation, compassion, empathy, service to mankind and respect towards others and the environment.",
@@ -160,8 +160,9 @@ const ObjectivesPage = () => {
                     "To instill in children the attributes of integrity, citizenship, service, and diversity so that they become positive contributing members of the society.",
                     "To develop the right conduct in children, so that they become contributing individual members of the society, nation and world.",
                   ].map((item, idx) => (
-                    <li key={idx} className="text-gray-700 font-normal leading-relaxed">
-                      {item}
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-gray-400 flex-shrink-0" />
+                      <span className="text-gray-700 font-normal leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -170,7 +171,7 @@ const ObjectivesPage = () => {
               {/* CORE VALUES Section */}
               <div className="space-y-6">
                 <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+                  <h2 className="text-xl sm:text-3xl font-bold text-gray-950 tracking-tight">
                     CORE VALUES
                   </h2>
                   <p className="text-gray-600 text-xs sm:text-sm lg:text-[0.95rem] xl:text-base font-normal leading-relaxed">

@@ -63,7 +63,7 @@ const AboutPage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs lg:text-sm xl:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs lg:text-sm xl:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === "about").label}</span>
                   <svg
@@ -90,8 +90,8 @@ const AboutPage = () => {
                             key={tab.id}
                             href={tab.path}
                             onClick={() => setIsOpen(false)}
-                            className={`flex items-center px-4 py-3 rounded-xl text-left text-xs lg:text-sm xl:text-base font-bold transition-all duration-200 ${isActive
-                              ? "text-white font-extrabold"
+                            className={`flex items-center px-4 py-3 rounded-xl text-left text-xs lg:text-sm xl:text-base font-medium transition-all duration-200 ${isActive
+                              ? "text-white font-bold"
                               : "text-white/70 hover:text-white"
                               }`}
                           >

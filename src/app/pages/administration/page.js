@@ -139,7 +139,7 @@ const AdministrationPage = () => {
   const renderLeaderSection = (title, leaders, cols = 3) => {
     return (
       <div className="space-y-6">
-        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight border-b pb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight border-b pb-2">
           {title}
         </h2>
 
@@ -228,7 +228,7 @@ const AdministrationPage = () => {
               <div className="relative lg:hidden mb-6 w-full z-30">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-bold active:scale-98 transition-all duration-300 select-none cursor-pointer"
+                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-black/[0.04] border border-black/5 text-gray-900 text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
                 >
                   <span>{tabs.find(t => t.id === activeTab).label}</span>
                   <svg
@@ -257,8 +257,8 @@ const AdministrationPage = () => {
                               setActiveTab(tab.id);
                               setIsOpen(false);
                             }}
-                            className={`w-full flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-bold transition-all duration-200 ${isActive
-                                ? "text-gray-950 font-extrabold"
+                            className={`w-full flex items-center px-4 py-3 rounded-xl text-left text-sm md:text-base font-medium transition-all duration-200 ${isActive
+                                ? "text-gray-950 font-bold"
                                 : "text-gray-600 hover:text-gray-950"
                               }`}
                           >
@@ -334,7 +334,7 @@ const AdministrationPage = () => {
               {/* TAB: District Co-ordinators */}
               {activeTab === "district-coordinators" && (
                 <div className="space-y-6">
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight border-b pb-2">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight border-b pb-2">
                     DISTRICT CO-ORDINATORS
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">
