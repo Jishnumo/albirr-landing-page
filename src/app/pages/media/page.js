@@ -118,6 +118,8 @@ function MediaContent() {
     { id: "downloads", label: "Downloads" }
   ];
 
+  const activeIndex = tabs.findIndex((t) => t.id === activeTab);
+
   // Set active tab based on query param 'tab'
   useEffect(() => {
     const tabParam = searchParams.get("tab");
@@ -192,82 +194,43 @@ function MediaContent() {
         </div>
 
         {/* Layout Container */}
-        <div className="relative overflow-hidden min-h-[500px] lg:min-h-[600px] p-4 sm:p-8 md:p-10 lg:p-12 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl flex flex-col justify-start animate-in fade-in duration-700">
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="relative overflow-visible min-h-[500px] lg:min-h-[600px] p-4 sm:p-8 md:p-10 lg:p-12 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl flex flex-col justify-start animate-in fade-in duration-700">
+          
+          {/* Centered Pill Toggle Selector */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center px-4 z-50">
+            <div className="relative w-full max-w-xl">
+              <div className="relative grid grid-cols-3 items-center bg-[#24325c] border border-white/20 rounded-full p-1 shadow-[0_15px_40px_rgba(0,0,0,0.35)] overflow-hidden">
+                {/* Sliding Active Pill */}
+                <div
+                  className="absolute inset-y-1 left-1 w-[calc(33.333%-0.25rem)] rounded-full bg-[#7b849f] shadow-inner transition-transform duration-300 ease-out"
+                  style={{ transform: `translateX(${activeIndex * 100}%)` }}
+                  aria-hidden="true"
+                />
 
-            {/* Sidebar Tab Selector */}
-            <div className="lg:col-span-3 flex flex-col justify-start">
-              {/* Mobile/Tablet Dropdown Select (Dark Theme) */}
-              <div className="relative lg:hidden mb-6 w-full z-30">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center justify-between w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs sm:text-sm md:text-base font-semibold active:scale-98 transition-all duration-300 select-none cursor-pointer"
-                >
-                  <span>{tabs.find(t => t.id === activeTab).label}</span>
-                  <svg
-                    className={`w-4 h-4 text-white/70 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {isOpen && (
-                  <>
-                    {/* Overlay to close the dropdown */}
-                    <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-                    
-                    {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-2xl bg-[#0f1f42]/95 border border-white/10 backdrop-blur-lg shadow-2xl p-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                      {tabs.map((tab) => {
-                        const isActive = activeTab === tab.id;
-                        return (
-                          <button
-                            key={tab.id}
-                            onClick={() => {
-                              handleTabChange(tab.id);
-                              setIsOpen(false);
-                            }}
-                            className={`w-full flex items-center px-4 py-3 rounded-xl text-left text-xs sm:text-sm md:text-base font-medium transition-all duration-200 ${
-                              isActive
-                                ? "text-[#ff944d] font-bold"
-                                : "text-white/70 hover:text-white"
-                            }`}
-                          >
-                            <span>{tab.label}</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </>
-                )}
-              </div>
-
-              {/* Desktop Navigation Sidebar */}
-              <nav className="hidden lg:flex flex-col gap-2">
                 {tabs.map((tab) => {
                   const isActive = activeTab === tab.id;
                   return (
                     <button
                       key={tab.id}
+                      type="button"
                       onClick={() => handleTabChange(tab.id)}
-                      className={`flex items-center px-6 py-3 rounded-full text-left text-xs sm:text-sm md:text-base font-bold transition-all duration-300 select-none cursor-pointer ${
-                        isActive
-                          ? "text-[#ff944d] font-extrabold"
-                          : "text-white/70 hover:text-white"
-                      }`}
+                      className={
+                        "relative z-10 flex w-full items-center justify-center px-3 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-full font-medium text-[11px] sm:text-sm md:text-[17px] transition-colors whitespace-nowrap cursor-pointer " +
+                        (isActive
+                          ? "text-[#ff944d] font-bold"
+                          : "text-white hover:text-[#ff944d]")
+                      }
                     >
-                      <span>{tab.label}</span>
+                      {tab.label}
                     </button>
                   );
                 })}
-              </nav>
+              </div>
             </div>
+          </div>
 
-            {/* Content Display Window */}
-            <div className="lg:col-span-9 flex flex-col justify-center min-h-[350px]">
+          {/* Content Display Window */}
+          <div className="relative z-10 w-full mt-6 sm:mt-10 md:mt-12 flex flex-col justify-center min-h-[350px]">
 
               {/* GALLERY TAB */}
               {activeTab === "gallery" && (
@@ -439,7 +402,6 @@ function MediaContent() {
               )}
 
             </div>
-          </div>
         </div>
       </main>
 
