@@ -2,6 +2,7 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Gallery = () => {
   const images = [
@@ -15,12 +16,14 @@ const Gallery = () => {
 
   const tabs = useMemo(
     () => [
-      { key: "gallery", label: "Gallery" },
-      { key: "news", label: "News & Media" },
-      { key: "downloads", label: "Downloads" },
+      { key: "gallery", label: "Gallery", href: "/pages/media?tab=gallery" },
+      { key: "news", label: "News & Media", href: "/pages/media?tab=news" },
+      { key: "downloads", label: "Downloads", href: "/pages/media?tab=downloads" },
     ],
     [],
   );
+
+  const router = useRouter();
 
   const [activeTab, setActiveTab] = useState("gallery");
   const activeIndex = tabs.findIndex((t) => t.key === activeTab);
@@ -57,7 +60,10 @@ const Gallery = () => {
                         <button
                           key={tab.key}
                           type="button"
-                          onClick={() => setActiveTab(tab.key)}
+                          onClick={() => {
+                            setActiveTab(tab.key);
+                            router.push(tab.href);
+                          }}
                           className={
                             "relative z-10 flex w-full items-center justify-center px-3 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-full font-medium text-[11px] sm:text-sm md:text-[17px] transition-colors whitespace-nowrap " +
                             (isActive
