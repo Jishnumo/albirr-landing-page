@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Target, Compass, Building, User } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const ChairmansMessagePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,7 @@ const ChairmansMessagePage = () => {
 
   return (
     <div className="relative min-h-screen text-white flex flex-col font-sans overflow-hidden bg-[#0b0830]">
+      <PageTitle title="Chairman's Message" />
       {/* Background gradient + soft glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_20%_20%,rgba(156,74,156,0.55),transparent_60%),radial-gradient(900px_600px_at_85%_30%,rgba(54,225,255,0.22),transparent_55%),radial-gradient(900px_600px_at_65%_95%,rgba(240,91,40,0.18),transparent_60%),linear-gradient(180deg,#0b0830_0%,#130846_55%,#0b0830_100%)]" />

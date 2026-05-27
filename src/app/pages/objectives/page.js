@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const coreValues = [
   {
@@ -41,6 +42,7 @@ const ObjectivesPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
+      <PageTitle title="Objectives" />
 
       {/* ── HEADER: about_objectives.png photo background ── */}
       <div

@@ -87,12 +87,12 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
             </h4>
             <ul className="space-y-2 sm:space-y-3 md:space-y-4 text-gray-400 text-xs sm:text-sm font-medium">
               <li>
-                <Link href="/pages/academics" className="hover:text-white transition-colors">
+                <Link href="/pages/academics?tab=curriculum" className="hover:text-white transition-colors">
                   Curriculum
                 </Link>
               </li>
               <li>
-                <Link href="/pages/academics" className="hover:text-white transition-colors">
+                <Link href="/pages/academics?tab=academics" className="hover:text-white transition-colors">
                   Academics
                 </Link>
               </li>
@@ -126,24 +126,24 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
             </h4>
             <ul className="space-y-2 sm:space-y-3 md:space-y-5 flex flex-col items-center sm:items-start w-full">
               <li className="flex items-center gap-2 sm:gap-3 md:gap-4 group w-full sm:w-auto justify-center sm:justify-start">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20 shrink-0">
-                  <Phone className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" />
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-all duration-300 group-hover:bg-white/15 group-hover:border-white/30 group-hover:scale-110 shrink-0">
+                  <Phone className="w-5 h-5 text-white shrink-0" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
                   +91 9061 559 827
                 </span>
               </li>
               <li className="flex items-start gap-2 sm:gap-3 md:gap-4 group w-full sm:w-auto justify-center sm:justify-start">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20 mt-0.5 shrink-0">
-                  <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" />
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-all duration-300 group-hover:bg-white/15 group-hover:border-white/30 group-hover:scale-110 mt-0.5 shrink-0">
+                  <MapPin className="w-5 h-5 text-white shrink-0" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors max-w-44 sm:max-w-40 md:max-w-50">
                   4517 Washington Ave. Manchester, Kentucky 39495
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 md:gap-4 group w-full sm:w-auto justify-center sm:justify-start">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-colors group-hover:bg-[#36E1FF]/20 shrink-0">
-                  <Mail className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" />
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-all duration-300 group-hover:bg-white/15 group-hover:border-white/30 group-hover:scale-110 shrink-0">
+                  <Mail className="w-5 h-5 text-white shrink-0" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
                   schoolalbirr@gmail.com
@@ -157,45 +157,27 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
             <h4 className="text-sm sm:text-base md:text-lg font-bold mb-3 sm:mb-4 md:mb-8 tracking-tight text-white uppercase">
               Follow Us
             </h4>
-            <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
-              <Link
-                href="#"
-                className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#3b5998] transition-all"
-              >
-                <svg
-                  className="h-4 w-4 sm:h-5 sm:w-5 fill-white"
-                  viewBox="0 0 24 24"
+            <div className="flex gap-2.5 sm:gap-3 justify-center sm:justify-start flex-wrap">
+              {[
+                { name: "Facebook", url: "https://facebook.com", domain: "facebook.com" },
+                { name: "Instagram", url: "https://instagram.com", domain: "instagram.com" },
+                { name: "X", url: "https://x.com", domain: "x.com" }
+              ].map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/30 hover:scale-110 active:scale-95 transition-all duration-300"
+                  title={`Follow us on ${social.name}`}
                 >
-                  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-                </svg>
-              </Link>
-              <Link
-                href="#"
-                className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#E1306C] transition-all"
-              >
-                <svg
-                  className="h-4 w-4 sm:h-5 sm:w-5 fill-none stroke-white"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </Link>
-              <Link
-                href="#"
-                className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#1DA1F2] transition-all"
-              >
-                <svg
-                  className="h-4 w-4 sm:h-5 sm:w-5 fill-white"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                </svg>
-              </Link>
+                  <img
+                    src={`https://www.google.com/s2/favicons?sz=64&domain=${social.domain}`}
+                    alt={social.name}
+                    className="w-5.5 h-5.5 object-contain rounded-sm"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>

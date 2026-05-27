@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const InfrastructurePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,7 @@ const InfrastructurePage = () => {
 
   return (
     <div className="relative min-h-screen bg-[#0f1f42] text-white flex flex-col font-sans overflow-hidden">
+      <PageTitle title="Infrastructure" />
 
       {/* Full-page background photo — about_albirr1.png */}
       <div className="absolute inset-0 z-0 pointer-events-none">

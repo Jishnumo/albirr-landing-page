@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Target, Compass, Building, User } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const MissionVisionPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,7 @@ const MissionVisionPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
+      <PageTitle title="Mission & Vision" />
 
       {/* ── HEADER: compact fixed-height banner, image fills naturally ── */}
       <div className="relative text-white overflow-hidden" style={{ height: "220px" }}>

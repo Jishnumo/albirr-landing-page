@@ -17,6 +17,7 @@ import {
   X
 } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 // All 13 images from the public/gallery_images folder
 const galleryImages = [
@@ -173,8 +174,18 @@ function MediaContent() {
     ? galleryImages
     : galleryImages.filter(img => img.category === selectedCategory);
 
+  const getPageTitle = () => {
+    switch (activeTab) {
+      case "gallery": return "Media Gallery";
+      case "news": return "News & Media";
+      case "downloads": return "Downloads Portal";
+      default: return "Media & Portal";
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-[#0f1f42] text-white flex flex-col font-sans overflow-hidden">
+      <PageTitle title={getPageTitle()} />
       {/* Decorative Blur Backgrounds */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-[#F05B28]/15 blur-[100px]" />

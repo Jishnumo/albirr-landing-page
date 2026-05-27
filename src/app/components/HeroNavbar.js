@@ -43,6 +43,51 @@ export default function HeroNavbar() {
     };
   }, []);
 
+  // Handle click on "Contact" link
+  const handleContactClick = (e) => {
+    setIsMenuOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      const element = document.getElementById("contact");
+      if (element) {
+        if (window.lenis) {
+          window.lenis.scrollTo(element, { duration: 1.2 });
+        } else {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  };
+
+  // Scroll to #contact on subpage redirect once home page is loaded
+  useEffect(() => {
+    if (pathname === "/") {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        const hash = window.location.hash;
+        if (hash === "#contact") {
+          const element = document.getElementById("contact");
+          if (element) {
+            clearInterval(interval);
+            setTimeout(() => {
+              if (window.lenis) {
+                window.lenis.scrollTo(element, { duration: 1.2 });
+              } else {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 100);
+          }
+        }
+        attempts++;
+        if (attempts > 30) { // Max 3 seconds
+          clearInterval(interval);
+        }
+      }, 100);
+
+      return () => clearInterval(interval);
+    }
+  }, [pathname]);
+
   // Section detector so that parent menu items "pop" correctly based on active subroutes
   const isLinkActive = (path) => {
     if (!pathname) return false;
@@ -168,9 +213,9 @@ export default function HeroNavbar() {
 
           {/* Desktop Right CTA - Replicated exact same space, font, and size for Contact */}
           <div className="hidden xl:flex items-center gap-6 xl:gap-7 2xl:gap-8">
-            <Link href="/#contact" className={getLinkClass("/#contact")}>
+            <a href="/#contact" onClick={handleContactClick} className={getLinkClass("/#contact")}>
               Contact
-            </Link>
+            </a>
             <Link
               href="#"
               className="group flex items-center gap-2 rounded-lg bg-[#9C4A9C] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 shadow-lg shadow-[#9C4A9C]/20"
@@ -230,7 +275,7 @@ export default function HeroNavbar() {
           
           <div className="h-px w-24 bg-white/20" />
           
-          <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className={isLightPage ? "text-xl font-normal text-slate-600 hover:text-[#0f1f42] transition" : "text-xl font-normal text-white/80 hover:text-white transition"}>Contact</Link>
+          <a href="/#contact" onClick={handleContactClick} className={isLightPage ? "text-xl font-normal text-slate-600 hover:text-[#0f1f42] transition" : "text-xl font-normal text-white/80 hover:text-white transition"}>Contact</a>
           <Link
             href="#"
             onClick={() => setIsMenuOpen(false)}

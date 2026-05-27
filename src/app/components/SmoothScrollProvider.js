@@ -20,6 +20,7 @@ export default function SmoothScrollProvider({ children }) {
     });
 
     lenisRef.current = lenis;
+    window.lenis = lenis;
 
     let rafId;
     const raf = (time) => {

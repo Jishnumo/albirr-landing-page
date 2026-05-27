@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const samasthaLeaders = [
   {
@@ -194,8 +195,20 @@ const AdministrationPage = () => {
     );
   };
 
+  const getPageTitle = () => {
+    switch (activeTab) {
+      case "administration": return "Administration";
+      case "albirr-schools": return "Albirr Schools Admin";
+      case "district-coordinators": return "District Coordinators";
+      case "albirr-members": return "Albirr Members";
+      case "academic-body": return "Academic Body";
+      default: return "Administration";
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
+      <PageTitle title={getPageTitle()} />
 
       {/* Banner with HeroNavbar */}
       <div className="relative text-white overflow-hidden" style={{ height: "220px" }}>

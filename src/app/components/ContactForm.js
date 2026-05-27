@@ -224,7 +224,7 @@ const ContactForm = () => {
                 href="mailto:schoolalbirr@gmail.com"
                 className="flex items-center gap-3 px-8 py-4 rounded-full bg-transparent border border-white/60 w-max transition-all hover:bg-white/5 hover:border-white cursor-pointer no-underline text-white"
               >
-                <Mail className="w-5 h-5 text-white" />
+                <Mail className="w-5 h-5 text-white shrink-0" />
                 <span className="text-base font-medium tracking-tight">
                   schoolalbirr@gmail.com
                 </span>
@@ -235,7 +235,7 @@ const ContactForm = () => {
                 href="tel:+919061559827"
                 className="flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#e3a1bf] via-[#f48a6a] to-[#a137e3] w-max shadow-xl transition-all hover:scale-105 active:scale-95 no-underline text-white"
               >
-                <Phone className="w-5 h-5 text-white" />
+                <Phone className="w-5 h-5 text-white shrink-0" />
                 <span className="text-base font-medium tracking-tight">
                   +91 9061 559 827
                 </span>

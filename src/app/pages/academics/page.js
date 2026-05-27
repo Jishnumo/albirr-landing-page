@@ -1,13 +1,24 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, GraduationCap, School } from "lucide-react";
 import Footer from "../../components/Footer";
+import PageTitle from "../../components/PageTitle";
 
 const AcademicsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("academics");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get("tab");
+      if (tab && ["academics", "curriculum", "admission"].includes(tab)) {
+        setActiveTab(tab);
+      }
+    }
+  }, []);
 
   const tabs = [
     { id: "academics", label: "Academics", icon: BookOpen },
@@ -15,8 +26,18 @@ const AcademicsPage = () => {
     { id: "admission", label: "Admission", icon: School },
   ];
 
+  const getPageTitle = () => {
+    switch (activeTab) {
+      case "academics": return "Academics";
+      case "curriculum": return "Curriculum";
+      case "admission": return "Admission";
+      default: return "Academics";
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-[#0f1f42] text-white flex flex-col font-sans overflow-hidden">
+      <PageTitle title={getPageTitle()} />
 
       {/* Full-page background photo — about_albirr1.png */}
       <div className="absolute inset-0 z-0 pointer-events-none">

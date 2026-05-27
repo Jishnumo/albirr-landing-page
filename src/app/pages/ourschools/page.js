@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight, Search, Phone, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import Footer from "../../components/Footer";
 import schoolsData from "../../../../public/schools.json";
+import PageTitle from "../../components/PageTitle";
 
 const OurSchoolsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -89,6 +90,7 @@ const OurSchoolsPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-slate-800">
+      <PageTitle title="Our Schools" />
 
       {/* ── HEADER: compact fixed-height banner matching Mission/Vision ── */}
       <div className="relative text-white overflow-hidden" style={{ height: "220px" }}>
