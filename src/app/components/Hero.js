@@ -18,13 +18,15 @@ const Hero = () => {
           fill
           className="object-cover object-top-left"
           priority
+          sizes="100vw"
+          decoding="async"
         />
       </div>
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -right-32 -top-32 h-[300px] w-[300px] md:h-[600px] md:w-[600px] rounded-full bg-[#F05B28]/30 blur-[60px] md:blur-[100px]" />
-        <div className="absolute right-20 top-32 h-[250px] w-[250px] md:h-[500px] md:w-[500px] rounded-full bg-[#9C4A9C]/25 blur-[60px] md:blur-[100px]" />
-        <div className="absolute -left-40 top-20 h-[225px] w-[225px] md:h-[450px] md:w-[450px] rounded-full bg-[#36E1FF]/15 blur-[60px] md:blur-[100px]" />
+        <div className="absolute -right-32 -top-32 h-75 w-75 md:h-150 md:w-150 rounded-full bg-[#F05B28]/30 blur-[60px] md:blur-[100px]" />
+        <div className="absolute right-20 top-32 h-62.5 w-62.5 md:h-125 md:w-125 rounded-full bg-[#9C4A9C]/25 blur-[60px] md:blur-[100px]" />
+        <div className="absolute -left-40 top-20 h-56.25 w-56.25 md:h-112.5 md:w-112.5 rounded-full bg-[#36E1FF]/15 blur-[60px] md:blur-[100px]" />
       </div>
 
       {/* Hero Content */}
@@ -66,6 +68,8 @@ const Hero = () => {
               height={1000}
               className="w-full h-auto object-contain object-center"
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              decoding="async"
             />
           </div>
         </div>
@@ -80,6 +84,7 @@ const Hero = () => {
               className="object-fill rounded-xl"
               sizes="(max-width: 768px) 100vw, 1100px"
               priority
+              decoding="async"
             />
 
             <div className="relative z-10 flex flex-col items-center justify-center text-center">

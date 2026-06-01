@@ -1,0 +1,16 @@
+{
+  "name": "ALBiRR Schools",
+  "short_name": "ALBiRR",
+  "description": "Empowering the next generation with balanced education and strong Islamic values.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121F3E",
+  "theme_color": "#121F3E",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

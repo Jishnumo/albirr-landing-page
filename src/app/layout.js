@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import HeroNavbar from "./components/HeroNavbar";
+import RouteLoadingOverlay from "./components/RouteLoadingOverlay";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -15,24 +16,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AL-BIRR Schools",
-  description: "Empowering the next generation with balanced education and strong Islamic values.",
+  metadataBase: new URL("https://albirrschools.com"),
+  title: {
+    default: "ALBiRR Schools",
+    template: "%s | ALBiRR Schools",
+  },
+  description:
+    "Empowering the next generation with balanced education and strong Islamic values.",
+  applicationName: "ALBiRR Schools",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "AL-BIRR Schools",
-    description: "Empowering the next generation with balanced education and strong Islamic values.",
-    url: "https://albirrschools.com", // Replace with your actual domain when deployed
-    siteName: "AL-BIRR Schools",
+    title: "ALBiRR Schools",
+    description:
+      "Empowering the next generation with balanced education and strong Islamic values.",
+    url: "https://albirrschools.com",
+    siteName: "ALBiRR Schools",
     images: [
       {
         url: "/icon.png",
         width: 512,
         height: 512,
-        alt: "AL-BIRR Schools Logo",
+        alt: "ALBiRR Schools Logo",
       },
     ],
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "ALBiRR Schools",
+    description:
+      "Empowering the next generation with balanced education and strong Islamic values.",
+    images: ["/icon.png"],
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png" }],
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({ children }) {
@@ -48,6 +83,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <SmoothScrollProvider>
+          <RouteLoadingOverlay minDurationMs={500} />
           <HeroNavbar />
           {children}
         </SmoothScrollProvider>

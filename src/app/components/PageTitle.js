@@ -12,11 +12,11 @@ import { useEffect } from "react";
  */
 export default function PageTitle({ title }) {
   useEffect(() => {
-    const formattedTitle = title ? `${title} | AL-BIRR Schools` : "AL-BIRR Schools";
+    const formattedTitle = title ? `${title} | ALBiRR Schools` : "ALBiRR Schools";
     if (document.title !== formattedTitle) {
       document.title = formattedTitle;
     }
   }, [title]);
 
-  return <title>{title ? `${title} | AL-BIRR Schools` : "AL-BIRR Schools"}</title>;
+  return <title>{title ? `${title} | ALBiRR Schools` : "ALBiRR Schools"}</title>;
 }
