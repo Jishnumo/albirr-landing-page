@@ -138,7 +138,7 @@ const Footer = ({ className = "bg-[#1a0f3c]" }) => {
                   <MapPin className="w-5 h-5 text-white shrink-0" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white transition-colors max-w-44 sm:max-w-40 md:max-w-50">
-                  4517 Washington Ave. Manchester, Kentucky 39495
+                  Varakkal Complex, Koya Road, Puthiyangadi, Calicut-21, Kerala, India
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 md:gap-4 group w-full sm:w-auto justify-center sm:justify-start">
